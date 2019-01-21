@@ -1,7 +1,8 @@
 CREATE DATABASE InstaDog;
 
 
-CREATE USER "adminInstaDog"@"localhost" IDENTIFIED BY "Inst@D0g"; 
+CREATE USER "adminInstaDog"@"localhost" IDENTIFIED BY "Inst@D0g" 
+CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
 GRANT SELECT,UPDATE,INSERT,DELETE ON InstaDog.* TO "adminInstaDog"@"localhost"  WITH GRANT OPTION;   
