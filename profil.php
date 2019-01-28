@@ -1,6 +1,6 @@
 <?php 
-$title= "Profil de l'utilisateur" ;
-include "header.php"   
+$title = "Profil de l'utilisateur";
+include "header.php"
 ?>
 <div class="container">
     <div class="row">
@@ -54,5 +54,5 @@ include "header.php"
     </div>
   </div>
 <?php 
-include "footer.php" 
+include "footer.php"
 ?>
