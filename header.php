@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">                     
     <!-- CSS PERSONNALISÉS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title><?php 
-if(isset($title) && !empty($title)) { 
-   echo $title; 
-} 
-else { 
-   echo "Bienvenue sur Instadog"; 
-} ?></title>
+    <title>
+      <?php 
+        if(isset($title) && !empty($title)) { 
+          echo $title; 
+        } 
+        else { 
+          echo "Bienvenue sur Instadog"; 
+        } 
+      ?>
+    </title>
 </head>
 <body>
 <header class="container-fluid">
