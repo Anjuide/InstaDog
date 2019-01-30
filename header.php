@@ -44,7 +44,7 @@
         <a class="nav-link" href="#">Articles</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Ajouter un compagnon</a>
+        <a class="nav-link" href="ajouterUnChien.php">Ajouter un compagnon</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -53,10 +53,10 @@
     </form>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Se connecter</a>
+        <a class="nav-link" href="connexion.php">Se connecter</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">S'inscrire</a>
+        <a class="nav-link" href="inscription.php">S'inscrire</a>
       </li>
     </ul>
   </div>

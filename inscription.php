@@ -1,6 +1,6 @@
 <?php 
-$title= "Profil de l'utilisateur" ;
-include "header.php"   
+$title = "Profil de l'utilisateur";
+include "header.php"
 ?>
 <div class="container">
     <div class="row">
@@ -23,15 +23,12 @@ include "header.php"
                 <input type="password" id="inputPasswordConfirm" class="form-control" placeholder="Confirmez le mot de passe" required>
               </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">S'inscrire</button>
-              <div class="text-center">
-                  <a class="small" href="#">Mot de passe oublié?</a>
-                </div>
                 <div class="text-center">
                   <a class="small" href="#">Vous avez déjà un compte? Connectez-vous ici</a>
                 </div>
-              <hr class="my-4">
+              <!-- <hr class="my-4">
               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Continuer avec Google</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Continuer avec Facebook</button>
+              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Continuer avec Facebook</button> -->
             </form>
           </div>
         </div>
@@ -39,5 +36,5 @@ include "header.php"
     </div>
   </div>
 <?php 
-include "footer.php" 
+include "footer.php"
 ?>
