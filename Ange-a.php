@@ -1,12 +1,11 @@
-<?php 
-$title = "Profil User Avec Ses Chien";
-include "header.php"
+<?php
+    include "header.php";
 ?>
 <div class="container">
 
-    <div class="row">
+<div class="row" style=" background-color:blue;" >
 
-        <div class="col-sm-9 col-md-7 col-lg-5 ">
+<div class="col-sm-9 col-md-7 col-lg-5 ">
             <div class="card card-signin my-5">
                 <div class="card-body">
                 <h5 class="card-title text-center">Mon profil</h5>
@@ -33,62 +32,79 @@ include "header.php"
             </div>      
         </div>
 
+  <!--  <div class="col" style="width: 40rem;background-color:blue;">
+        <span>Profil</span>
+    </div> -->
+
 
     <div class="col">
 
         <div class="row">
             <div class="col">
-                <a href="profil_du_chien.php">
+                <a href="index.php">
                 <div class="card" style="width: 18rem;margin-top:52px;">
-                    <img class="card-img-top" src="images/D1.jpeg" alt="Card image">
+                <img class="card-img-top" src="images/D1.jpeg" alt="Card image">
                     <div class="card-img-overlay">
                     <h4 class="card-title dogyy">Scopy Dooo</h4>
+                  
                     </div>
+                    </a>
                 </div>
-                </a>
             </div>
 
+
             <div class="col">
-                <a href="profil_du_chien.php">
                 <div class="card" style="width: 18rem;margin-top:52px;">
                     <img class="card-img-top" src="images/D2.jpeg" alt="Card image">
-                    <div class="card-img-overlay">
-                    <h4 class="card-title dogyy">Scopy Dooo</h4>
-                    </div>
+                        <div class="card-img-overlay">
+                        <h4 class="card-title dogyy">Scopy Dooo</h4>
+                        <a href="#"></a>
+                        </div>
                 </div>
-                </a>
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
-                <a href="profil_du_chien.php">
+        <div class="col">
                 <div class="card" style="width: 18rem;margin-top:52px;">
-                    <img class="card-img-top" src="images/D3.jpeg" alt="Card image">
+                <img class="card-img-top" src="images/D3.jpeg" alt="Card image">
                     <div class="card-img-overlay">
                     <h4 class="card-title dogyy">Scopy Dooo</h4>
+                    <a href="#"></a>
                     </div>
                 </div>
-                </a>
             </div>
 
 
             <div class="col">
-                <a href="profil_du_chien.php">
                 <div class="card" style="width: 18rem;margin-top:52px;">
                     <img class="card-img-top" src="images/D4.jpeg" alt="Card image">
-                    <div class="card-img-overlay">
-                    <h4 class="card-title dogyy">Scopy Dooo</h4>
-                    </div>
+                        <div class="card-img-overlay">
+                        <h4 class="card-title dogyy">Scopy Dooo</h4>
+                        <a href="#"></a>
+                        </div>
                 </div>
-                </a>  
-            </div> 
+            </div>
+             
         </div>
 
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Image 1</h1>
+            </div>
+            <div class="col">
+                <h1>Image 2</h1>
+            </div>
         </div>
+
+      
+
     </div>
+</div>
 </div>>
 
-<?php 
-include "footer.php"
+<?php
+    include "footer.php";
 ?>

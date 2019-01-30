@@ -19,8 +19,8 @@ include "header.php"
                             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
                         </div>
              
-                        <div class="card" style="width: 18rem; col-lg-3; margin:auto">
-                            <img src="images/D2.jpeg" class="card-img-top" alt="...">
+                        <div class="card" style="width: 24rem; col-lg-3; margin:auto">
+                            <img src="images/D5.jpeg" class="card-img-top" alt="...">
                         </div>
                         <div class="form-group txtara">
                             <label for="exampleFormControlTextarea1">Artile</label>

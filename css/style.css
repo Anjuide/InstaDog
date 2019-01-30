@@ -110,6 +110,29 @@
     background-color: #3b5998;
   }
 
+.ch-aj-ch{
+  margin-left: 40px;
+}
+
+.btn-aj-ch{
+  margin-top: 25px;
+}
+
+.txtara{
+  margin-top: 20px;
+}
+
+
+.inp-articl{
+  border-radius: .25rem;
+  margin-bottom: 20px;
+
+}
+
+
+
+
+
   .image{
     width: 100%;
     z-index: 1;

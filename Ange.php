@@ -2,11 +2,12 @@
     include "header.php";
 ?>
 
-<div class="row">
-    <div class="col">
+<div class="row" style=" background-color:blue;" >
+    <div class="col" style="width: 40rem;background-color:blue;">
         <span>Profil</span>
     </div>
     <div class="col">
+
         <div class="row">
             <div class="col">
                 <h1>Image 1</h1>
