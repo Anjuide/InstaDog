@@ -27,7 +27,7 @@ include "header.php"
                 <label for="inputVille">Ville</label>
                 <input type="text" id="inputVille" class="form-control" placeholder="Ville" required>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Mofifier</button>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Modifier</button>
                 <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Enregistrer</button>
                 </div>
             </div>      
@@ -35,6 +35,10 @@ include "header.php"
 
 
     <div class="col">
+
+        <div class="row">
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Ajouter un chien</button>
+        </div>
 
         <div class="row">
             <div class="col">

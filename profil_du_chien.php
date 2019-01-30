@@ -37,6 +37,16 @@ include "header.php"
 </div>
 
 <div class="container-liste-articles">
+		<div class="post show post-photopost" style="background-image: url(http://usercontent.packdog.com/post/photo/bg/6qUGGa_914ddfd5128bf6343382f0c6d7419a69ffeeb1c0.jpg); background-color: #8F9DB1; background-position: 50% 0%;" id="post-944ydm" data-id="515448" data-type="post" data-created="1520035310">
+			<div class="post-bgscreen">
+				<div class="post-container">
+						<a href="AjouteeUnArticle.php" class="btn btn-primary">
+							<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Ajouter Un Article</button>
+						</a>
+				</div><!-- post-container -->
+			</div><!-- post-bgscreen -->
+        </div><!-- post -->
+		
 		<div class="post show post-photopost" style="background-image: url(http://usercontent.packdog.com/post/photo/bg/O3sbpq_4f61d5cdeb060c298b82c66d95a1376d71f9d8e8.jpg); background-color: #98A5B0; background-position: 50% 0%;" id="post-ng2VjB" data-id="516849" data-type="post" data-created="1521933880">
 			<div class="post-bgscreen">
 				<div class="post-container">
@@ -114,11 +124,6 @@ include "header.php"
 								Une belle histoire d'amour, de vie, de joie entre Rod et son poto Smiley, ils se rencontrés quelque part en ville. Oui des chiens peubent faire des rencontres tout seul!
 							</p>
 						</div>
-						<a href="AjouteeUnArticle.php" class="btn btn-primary">
-						<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Ajouter Un Article</button>
-						
-						
-						</a>
 					</div>
 				</div><!-- post-container -->
 			</div><!-- post-bgscreen -->
