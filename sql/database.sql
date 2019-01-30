@@ -73,4 +73,3 @@ CREATE TABLE DogRace (
     FOREIGN KEY (idRace) REFERENCES Race(id) 
          
 );
-
