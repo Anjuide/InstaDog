@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">                     
     <!-- CSS PERSONNALISÉS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title><?php 
-if(isset($title) && !empty($title)) { 
-   echo $title; 
-} 
-else { 
-   echo "Bienvenue sur Instadog"; 
-} ?></title>
+    <title>
+      <?php 
+        if(isset($title) && !empty($title)) { 
+          echo $title; 
+        } 
+        else { 
+          echo "Bienvenue sur Instadog"; 
+        } 
+      ?>
+    </title>
 </head>
 <body>
 <header class="container-fluid">
@@ -37,11 +40,11 @@ else {
       <li class="nav-item">
         <a class="nav-link" href="#">Races</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="#">Articles</a>
-      </li>
+      </li> -->
       <li class="nav-item">
-        <a class="nav-link" href="#">Ajouter un compagnon</a>
+        <a class="nav-link" href="ajouterUnChien.php">Ajouter un compagnon</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -50,10 +53,10 @@ else {
     </form>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Se connecter</a>
+        <a class="nav-link" href="connexion.php">Se connecter</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">S'inscrire</a>
+        <a class="nav-link" href="inscription.php">S'inscrire</a>
       </li>
     </ul>
   </div>
