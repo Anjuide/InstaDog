@@ -114,9 +114,10 @@ include "header.php"
 								Une belle histoire d'amour, de vie, de joie entre Rod et son poto Smiley, ils se rencontrés quelque part en ville. Oui des chiens peubent faire des rencontres tout seul!
 							</p>
 						</div>
-						<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Ajouter Un Articl</button>
-						
 						<a href="AjouteeUnArticle.php" class="btn btn-primary">
+						<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Ajouter Un Article</button>
+						
+						
 						</a>
 					</div>
 				</div><!-- post-container -->

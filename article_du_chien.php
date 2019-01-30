@@ -37,6 +37,16 @@ include "header.php"
 					</span>
 				</h3>
 				<ul class="commentlist">
+
+					<li class="comment" id="comment_188868" data-id="188868">
+						<div class="comment-author">
+							<strong>Commenter l'article</strong>
+						</div>
+						<p><textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea></p>
+						
+						<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Valider</button>
+					</li><!-- comment -->
+
 					<li class="comment" id="comment_189914" data-id="189914">
 						<div class="comment-author">
 							<strong><a href="#">John Doe</a></strong>
