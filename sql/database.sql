@@ -23,7 +23,7 @@ CREATE TABLE UserDog (
 
 CREATE TABLE Dog (
     id INT(100) NOT NULL AUTO_INCREMENT ,
-    nickName INT ,
+    nickName  varchar(50) ,
     birthday DATE ,
     picture varchar(100),
     userId INT(100) ,
