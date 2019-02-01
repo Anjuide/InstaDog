@@ -35,6 +35,7 @@ CREATE TABLE Dog (
 CREATE TABLE Article (
     id INT(100) NOT NULL AUTO_INCREMENT,
     textA TEXT ,
+    title VARCHAR(100) ,
     publicationDate DATETIME ,
     picture varchar(100),
     dogId INT(100) ,
@@ -66,10 +67,10 @@ CREATE TABLE Race (
     
 
 CREATE TABLE DogRace (
-    idDog INT(100),
-    idRace INT(100) ,
-    PRIMARY KEY (idDog, idRace ) ,
-    FOREIGN KEY (idDog) REFERENCES Dog(id),
-    FOREIGN KEY (idRace) REFERENCES Race(id) 
+    dogId INT(100),
+    raceId INT(100) ,
+    PRIMARY KEY (dogId, raceId ) ,
+    FOREIGN KEY (dogId) REFERENCES Dog(id),
+    FOREIGN KEY (raceId) REFERENCES Race(id) 
          
 );
