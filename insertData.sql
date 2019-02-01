@@ -39,7 +39,7 @@ INSERT INTO DogRace (dogId, raceId) VALUES
     ('9', '4'),
     ('10', '5')
 ;
-INSERT INTO Article (title, picture, content, publicationDate, dogId) VALUES 
+INSERT INTO Article (title, picture, description, publicationDate, dogId) VALUES 
     ('ange', 'anjuide.jpg', 'Ange a un chien qui s''appel anjuide', '2019-01-08 05:21:24', '1'),
     ('Marine', 'mareine.jpg', 'Marine a un chien qui s''appel mareine', '2019-01-08 05:21:24', '2'),
     ('Youka', 'youyou.jpg', 'Youka a un chien qui s''appel youyou', '2019-01-08 05:21:24', '3'),
