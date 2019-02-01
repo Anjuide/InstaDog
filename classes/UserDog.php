@@ -1,20 +1,19 @@
 <?php
 
 class UserDog{
-    private $id;
-    private $email;
-    private $pwd;
-    private $lastConnectionDate;
-    private $lastName;
-    private $firstName;
-    private $country;
-    private $city;
-    private $listDogs;
+    protected $id;
+    protected $email;
+    protected $pwd;
+    protected $lastConnectionDate;
 
+    function __set($name,$value){ }
+
+    // ID
     function getId() { 
         return $this->id; 
     }
 
+    // EMAIL
     function setEmail($email) { 
         $this->email = $email; 
     }
@@ -22,6 +21,7 @@ class UserDog{
         return $this->email; 
     }
 
+    // PWD
     function setPwd($pwd) { 
         $this->pwd = $pwd; 
     }
@@ -29,6 +29,7 @@ class UserDog{
         return $this->pwd;
     }
 
+    // LAST CONNECTION DATE
     function setLastConnectionDate($lastConnectionDate) { 
         $this->lastConnectionDate = $lastConnectionDate; 
     }
@@ -36,6 +37,19 @@ class UserDog{
         return $this->lastConnectionDate; 
     }
 
+}
+
+// LA CLASSE PROFILE HERITE DES ATTRIBUTS ET METHODES DE LA CLASSE USERDOG
+class Profile extends UserDog{
+    private $lastName;
+    private $firstName;
+    private $country;
+    private $city;
+    private $listDogs;
+
+    function __set($name,$value){ }
+    
+    // LAST NAME
     function setLastName($lastName) { 
         $this->lastName = $lastName; 
     }
@@ -43,6 +57,7 @@ class UserDog{
         return $this->lastName; 
     }
 
+    // FIRST NAME
     function setFirstName($firstName) { 
         $this->firstName = $firstName; 
     }
@@ -50,6 +65,7 @@ class UserDog{
         return $this->firstName; 
     }
 
+    // COUNTRY
     function setCountry($country) { 
         $this->country = $country; 
     }
@@ -57,6 +73,7 @@ class UserDog{
         return $this->country; 
     }
 
+    // CITY
     function setCity($city) { 
         $this->city = $city; 
     }
@@ -64,6 +81,7 @@ class UserDog{
         return $this->city; 
     }
 
+    // LIST DOGS
     function setListDogs($listDogs) { 
         $this->listDogs = $listDogs; 
     }
@@ -71,6 +89,5 @@ class UserDog{
         return $this->listDogs; 
     }
 }
-
 
 ?>

@@ -9,10 +9,14 @@ class Dog{
     private $userId;
     private $listArticles;
 
+    function __set($name,$value){ }
+    
+    // ID
     function getId() { 
         return $this->id; 
     }
 
+    // NICKNAME
     function setNickname($nickname) { 
         $this->nickname = $nickname; 
     }
@@ -20,6 +24,7 @@ class Dog{
         return $this->nickname; 
     }
 
+    // BIRTHDAY
     function setBirthday($birthday) { 
         $this->birthday = $birthday; 
     }
@@ -27,6 +32,7 @@ class Dog{
         return $this->birthday; 
     }
 
+    // PICTURE
     function setPicture($picture) { 
         $this->picture = $picture; 
     }
@@ -34,6 +40,7 @@ class Dog{
         return $this->picture; 
     }
 
+    // LIST RACES
     function setListRaces($listRaces) { 
         $this->listRaces = $listRaces; 
     }
@@ -41,6 +48,7 @@ class Dog{
         return $this->listRaces; 
     }
 
+    // USER ID
     function setUserId($userId) { 
         $this->userId = $userId; 
     }
@@ -48,6 +56,7 @@ class Dog{
         return $this->userId; 
     }
 
+    // LIST ARTICLES
     function setListArticles($listArticles) { 
         $this->listArticles = $listArticles; 
     }

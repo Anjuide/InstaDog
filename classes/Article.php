@@ -3,15 +3,19 @@ class Article{
     private $id;
     private $title;
     private $picture;
-    private $content;
+    private $description;
     private $publicationDate;
     private $dogId;
     private $listComments;
 
+    function __set($name,$value){ }
+    
+    // ID
     function getId() { 
         return $this->id; 
     }
 
+    // TITLE
     function setTitle($title) { 
         $this->title = $title; 
     }
@@ -19,6 +23,7 @@ class Article{
         return $this->title; 
     }
 
+    // PICTURE
     function setPicture($picture) { 
         $this->picture = $picture; 
     }
@@ -26,13 +31,15 @@ class Article{
         return $this->picture; 
     }
 
-    function setContent($content) { 
-        $this->content = $content; 
+    // DESCRIPTION
+    function setDescription($description) { 
+        $this->description = $description; 
     }
-    function getContent() { 
-        return $this->content; 
+    function getDescription() { 
+        return $this->description; 
     }
 
+    // PUBLICATION DATE
     function setPublicationDate($publicationDate) { 
         $this->publicationDate = $publicationDate; 
     }
@@ -40,6 +47,7 @@ class Article{
         return $this->publicationDate; 
     }
 
+    // DOG ID
     function setDogId($dogId) { 
         $this->dogId = $dogId; 
     }
@@ -47,6 +55,7 @@ class Article{
         return $this->dogId; 
     }
 
+    // LIST COMMENTS
     function setListComments($listComments) { 
         $this->listComments = $listComments; 
     }
