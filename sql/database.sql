@@ -42,7 +42,7 @@ CREATE TABLE Article (
     id INT(100) AUTO_INCREMENT,
     title VARCHAR(100),
     picture VARCHAR(100),
-    content TEXT,
+    description TEXT,
     publicationDate DATETIME,
     dogId INT(100),
     PRIMARY KEY (id),
