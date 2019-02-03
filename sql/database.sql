@@ -29,7 +29,7 @@ CREATE TABLE UserDog (
 -- CREER LA TABLE CHIEN
 CREATE TABLE Dog (
     id INT(100) AUTO_INCREMENT,
-    nickName VARCHAR(50),
+    nickname VARCHAR(50),
     birthday DATE,
     picture VARCHAR(100),
     userId INT(100),
