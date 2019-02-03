@@ -7,7 +7,8 @@ include "header.php"
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Se connecter</h5>
+            <h5 class="card-title text-center">Connexion</h5>
+            <hr class="my-4">
             <form class="form-signin">
               <div class="form-label-group">
                 <label for="inputEmail">Adresse e-mail</label>
@@ -18,18 +19,18 @@ include "header.php"
                 <label for="inputPassword">Mot de passe</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
               </div>
-
-              <div class="custom-control custom-checkbox mb-3">
+              <hr class="my-4">
+              <!-- <div class="custom-control custom-checkbox mb-3">
                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1">Se souvenir de moi</label>
-              </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Se connecter</button>
+              </div> -->
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Connexion</button>
               <div class="text-center">
                   <a class="small" href="#">Mot de passe oublié?</a>
-                </div>
-                <div class="text-center">
-                  <a class="small" href="#">Vous n'avez pas de compte? Inscrivez-vous ici</a>
-                </div>
+              </div>
+              <div class="text-center">
+                 <a class="small" href="#">Vous n'avez pas de compte? Inscrivez-vous ici</a>
+               </div>
               <!-- <hr class="my-4">
               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Continuer avec Google</button>
               <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Continuer avec Facebook</button> -->

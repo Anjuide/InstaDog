@@ -7,7 +7,8 @@ include "header.php"
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">S'inscrire</h5>
+            <h5 class="card-title text-center">Inscrivez-vous</h5>
+            <hr class="my-4">
             <form class="form-signin">
               <div class="form-label-group">
                 <label for="inputEmail">Adresse e-mail</label>
@@ -22,6 +23,7 @@ include "header.php"
                 <label for="inputPasswordConfirm">Confirmez le mot de passe</label>
                 <input type="password" id="inputPasswordConfirm" class="form-control" placeholder="Confirmez le mot de passe" required>
               </div>
+              <hr class="my-4">
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">S'inscrire</button>
                 <div class="text-center">
                   <a class="small" href="#">Vous avez déjà un compte? Connectez-vous ici</a>
