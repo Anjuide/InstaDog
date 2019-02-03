@@ -29,7 +29,7 @@ include "header.php"
                   <a class="small" href="#">Mot de passe oublié?</a>
               </div>
               <div class="text-center">
-                 <a class="small" href="#">Vous n'avez pas de compte? Inscrivez-vous ici</a>
+                 <a class="small" href="inscription.php">Vous n'avez pas de compte? Inscrivez-vous ici</a>
                </div>
               <!-- <hr class="my-4">
               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Continuer avec Google</button>
