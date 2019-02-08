@@ -1,174 +1,134 @@
 <?php 
-$title= "Ajouter Un Article" ;
-include "header.php"   
+
+require('config.php');
+
+
+$appli       = new Connexion();
+
+session_start();
+
+// initializing variables
+
+
+$email    = "";
+
+$errors = array(); 
+
+if (isset($_POST['reg_user'])) {
+
+  // receive all input values from the form
+
+   
+  $email =  ($_POST['email']);
+
+  $password_1 =  ($_POST['password_1']);
+
+  $password_2 =  ($_POST['password_2']);
+
+
+  // form validation: ensure that the form is correctly filled ...
+  // by adding (array_push()) corresponding error unto $errors array
+
+
+  if (empty($email)) { array_push($errors, "Email is required"); }
+
+  if (empty($password_1)) { array_push($errors, "Password is required"); }
+
+  if ($password_1 != $password_2) {array_push($errors, "The two passwords do not match");}
+
+  // first check the database to make sure 
+  // a user does not already exist with the same username and/or email
+
+  $user = $appli->checkUserIsExist($email);
+
+  if ($user) { // if user exists
+     
+      array_push($errors, "email already exists");
+      
+      
+      var_dump($user);
+
+
+  }
+  // Finally, register user if there are no errors in the form
+  
+  if (count($errors) == 0) {
+
+  	$pwd = password_hash($password_1, PASSWORD_DEFAULT); //encrypt the password before saving in the database
+    $appli->insertUser($email, $pwd);
+
+    $id = $appli->getLastId();
+
+    $appli->insertLastConnectionDateToUser($id);
+
+    $_SESSION['username'] = $email;
+
+    $_SESSION['useeId'] = $id;
+
+    $_SESSION['success'] = "You are now logged in";
+
+    echo 'You are now logged in';
+
+    echo "</br>" . "</br>";
+
+    echo $id;
+    
+//echo "<script> window.location.href =\"inscription.php\"</script>";
+
+  } else {
+
+    echo 'there are  errors';
+
+   // echo "<script> window.location.href =\"inscription.php\"</script>";
+
+  }
+
+
+
+
+
+
+}
+
+
+/*
+
+
+$user = $appli->checkUserIsExist("saad.barakat@gmail.com");
+
+
+echo "</br>" . "</br>";
+
+
+
+var_dump($user);
+
+
+
+/*
+
+$paswrd =  "sam1";
+
+$good_hash_pass = password_hash($paswrd, PASSWORD_DEFAULT);
+
+echo $good_hash_pass;
+
+
+echo "</br>" . "</br>";
+
+
+if (password_verify($paswrd, $good_hash_pass)) {
+
+    echo "Password Is Valid"; }
+
+    else {
+
+    echo "PassWord Is Invalid";  
+    }
+
+
+
+*/
+
+
 ?>
-<div class="row">
-
-
-    <div class="card" style="width: 20rem; col-lg-3 col-md-4">
-        <img class="card-img-top" src="images/D1.jpeg" alt="Card image">
-        <div class="card-img-overlay">
-        <h4 class="card-title dogyy">Scopy Dooo</h4>
-        <a href="#"></a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 20rem; col-lg-3 col-md-4">
-        <img class="card-img-top" src="images/D2.jpeg" alt="Card image">
-        <div class="card-img-overlay">
-        <h4 class="card-title dogyy">Scopy Dooo</h4> 
-        <a href="#"></a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 20rem; col-lg-3 col-md-4">
-        <img class="card-img-top" src="images/D3.jpeg" alt="Card image">
-        <div class="card-img-overlay">
-        <h4 class="card-title dogyy">Scopy Dooo</h4>
-        <a href="#"></a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 20rem; col-lg-3 col-md-4">
-        <img class="card-img-top" src="images/D4.jpeg" alt="Card image">
-        <div class="card-img-overlay">
-        <h4 class="card-title dogyy">Scopy Dooo</h4>
-         <a href="#"></a>
-        </div>
-        </div>
-
-    <div class="card" style="width: 20rem; col-lg-3 col-md-4">
-        <img class="card-img-top" src="images/D5.jpeg" alt="Card image">
-        <div class="card-img-overlay">
-        <h4 class="card-title dogyy">Scopy Dooo</h4>
-        <a href="#"></a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 20rem; col-lg-3 col-md-4">
-        <img class="card-img-top" src="images/D6.jpeg" alt="Card image">
-        <div class="card-img-overlay">
-        <h4 class="card-title dogyy">Scopy Dooo</h4>
-        <a href="#"></a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 20rem; col-lg-3 col-md-4">
-        <img class="card-img-top" src="images/D7.jpeg" alt="Card image">
-        <div class="card-img-overlay">
-        <h4 class="card-title dogyy">Scopy Dooo</h4>
-        <a href="#"></a>
-        </div>
-    </div>
-
-    <div class="card" style="width: 20rem; col-lg-3 col-md-4">
-        <img class="card-img-top" src="images/D8.jpeg" alt="Card image">
-        <div class="card-img-overlay">
-        <h4 class="card-title dogyy">Scopy Dooo</h4>
-        <a href="#"></a>
-        </div>
-    </div>
-
-<div class="card" style="width: 20rem; col-lg-3 col-md-4">
-  <img class="card-img-top" src="images/D9.jpeg" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title dogyy">Scopy Dooo</h4>
-    <a href="#"></a>
-  </div>
-</div>
-
-<div class="card" style="width: 20rem; col-lg-3 col-md-4">
-  <img class="card-img-top" src="images/D10.jpeg" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title dogyy">Scopy Dooo</h4>
-    <a href="#"></a>
-  </div>
-</div>
-
-<div class="card" style="width: 20rem; col-lg-3 col-md-4">
-  <img class="card-img-top" src="images/D18.jpeg" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title dogyy">Scopy Dooo</h4>
-    <a href="#"></a>
-  </div>
-</div>
-
-<div class="card" style="width: 20rem; col-lg-3 col-md-4">
-  <img class="card-img-top" src="images/D12.jpeg" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title dogyy">Scopy Dooo</h4>
-    <a href="#"></a>
-  </div>
-</div>
-
-<div class="card" style="width: 20rem; col-lg-3 col-md-4">
-  <img class="card-img-top" src="images/D13.jpeg" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title dogyy">Scopy Dooo</h4>
-    <a href="#"></a>
-  </div>
-</div>
-
-<div class="card" style="width: 20rem; col-lg-3 col-md-4">
-  <img class="card-img-top" src="images/D14.jpeg" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title dogyy">Scopy Dooo</h4>
-    <a href="#"></a>
-  </div>
-</div>
-
-<div class="card" style="width: 20rem; col-lg-3 col-md-4">
-  <img class="card-img-top" src="images/D15.jpeg" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title dogyy">Scopy Dooo</h4>
-    <a href="#"></a>
-  </div>
-</div>
-
-<div class="card" style="width: 20rem; col-lg-3 col-md-4">
-  <img class="card-img-top" src="images/D16.jpeg" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title dogyy">Scopy Dooo</h4>
-    <a href="#"></a>
-  </div>
-</div>
-
-<div class="card" style="width: 20rem; col-lg-3 col-md-4">
-  <img class="card-img-top" src="images/D17.jpeg" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title dogyy">Scopy Dooo</h4>
-    <a href="#"></a>
-  </div>
-</div>
-
-<div class="card" style="width: 20rem; col-lg-3 col-md-4">
-  <img class="card-img-top" src="images/D18.jpeg" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title dogyy">Scopy Dooo</h4>
-    <a href="#"></a>
-  </div>
-</div>
-
-<div class="card" style="width: 20rem; col-lg-3 col-md-4">
-  <img class="card-img-top" src="images/D19.jpeg" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title dogyy">Scopy Dooo</h4>
-    <a href="#"></a>
-  </div>
-</div>
-
-<div class="card" style="width: 20rem; col-lg-3 col-md-4">
-  <img class="card-img-top" src="images/D17.jpeg" alt="Card image">
-  <div class="card-img-overlay">
-    <h4 class="card-title dogyy">Scopy Dooo</h4>
-    <a href="#"></a>
-  </div>
-</div>
-
-
-
-
-
-
-
-</div>

@@ -15,16 +15,16 @@ INSERT INTO userDog (email, pwd, lastConnectionDate, lastName, firstName, countr
 ;
 
 INSERT INTO Dog (nickName, birthday, picture, userId) VALUES 
-    ('anjuide', '2019-01-08', 'anjuide.jpg', '1'),
-    ('mareine', '2019-01-08', 'mareine.jpg', '2'),
-    ('youyou', '2019-01-08', 'youyou.jpg', '3'),
-    ('lulu', '2019-01-08', 'lulu.jpg', '4'),
-    ('porci', '2019-01-08', 'porci.jpg', '5'),
-    ('didi', '2019-01-08', 'didi.jpg', '6'),
-    ('youyou', '2019-01-08', 'youyou.jpg', '7'),
-    ('abio', '2019-01-08', 'abio.jpg', '8'),
-    ('koue', '2019-01-08', 'koue.jpg', '9'),
-    ('momo', '2019-01-08', 'momo.jpg', '10')
+    ('anjuide', '2019-01-08', 'anjuide.jpeg', '1'),
+    ('mareine', '2019-01-08', 'mareine.jpeg', '2'),
+    ('youyou', '2019-01-08', 'youyou.jpeg', '3'),
+    ('lulu', '2019-01-08', 'lulu.jpeg', '4'),
+    ('porci', '2019-01-08', 'porci.jpeg', '5'),
+    ('didi', '2019-01-08', 'didi.jpeg', '6'),
+    ('youyou', '2019-01-08', 'youyou.jpeg', '7'),
+    ('abio', '2019-01-08', 'abio.jpeg', '8'),
+    ('koue', '2019-01-08', 'koue.jpeg', '9'),
+    ('momo', '2019-01-08', 'momo.jpeg', '10')
 ;
 
 INSERT INTO DogRace (dogId, raceId) VALUES 
@@ -40,21 +40,21 @@ INSERT INTO DogRace (dogId, raceId) VALUES
     ('10', '5')
 ;
 INSERT INTO Article (title, picture, description, publicationDate, dogId) VALUES 
-    ('ange', 'anjuide.jpg', 'Ange a un chien qui s''appel anjuide', '2019-01-08 05:21:24', '1'),
-    ('Marine', 'mareine.jpg', 'Marine a un chien qui s''appel mareine', '2019-01-08 05:21:24', '2'),
-    ('Youka', 'youyou.jpg', 'Youka a un chien qui s''appel youyou', '2019-01-08 05:21:24', '3'),
-    ('Eulalia', 'lulu.jpg', 'Eulalia a un chien qui s''appel lulu', '2019-01-08 05:21:24', '4'),
-    ('Alessandro', 'porci.jpg', 'Alessandro a un chien qui s''appel porci', '2019-01-08 05:21:24', '5'),
-    ('Odile', 'didi.jpg', 'Odile a un chien qui s''appel didi', '2019-01-08 05:21:24', '6'),
-    ('Youka', 'youyou.jpg', 'Youka a un chien qui s''appel youyou', '2019-01-08 05:21:24', '7'),
-    ('Sabine', 'abio.jpg', 'Sabine a un chien qui s''appel abio', '2019-01-08 05:21:24', '8'),
-    ('Marina', 'koue.jpg', 'Marina a un chien qui s''appel koue', '2019-01-08 05:21:24', '9'),
-    ('Mohamad', 'momo.jpg', 'Mohamad a un chien qui s''appel momo', '2019-01-08 05:21:24', '10'),
-    ('ange', 'anjuide.jpg', 'Ange a un autre chien qui s''appel anjuide', '2019-01-08 05:21:24', '1'),
-    ('Marine', 'mareine.jpg', 'Marine a un autre chien qui s''appel mareine', '2019-01-08 05:21:24', '2'),
-    ('Youka', 'youyou.jpg', 'Youka a un autre chien qui s''appel youyou', '2019-01-08 05:21:24', '3'),
-    ('Eulalia', 'lulu.jpg', 'Eulalia a un autre chien qui s''appel lulu', '2019-01-08 05:21:24', '4'),
-    ('Alessandro', 'porci.jpg', 'Alessandro a un autre chien qui s''appel porci', '2019-01-08 05:21:24', '5')
+    ('ange', 'anjuide.jpeg', 'Ange a un chien qui s''appel anjuide', '2019-01-08 05:21:24', '1'),
+    ('Marine', 'mareine.jpeg', 'Marine a un chien qui s''appel mareine', '2019-01-08 05:21:24', '2'),
+    ('Youka', 'youyou.jpeg', 'Youka a un chien qui s''appel youyou', '2019-01-08 05:21:24', '3'),
+    ('Eulalia', 'lulu.jpeg', 'Eulalia a un chien qui s''appel lulu', '2019-01-08 05:21:24', '4'),
+    ('Alessandro', 'porci.jpeg', 'Alessandro a un chien qui s''appel porci', '2019-01-08 05:21:24', '5'),
+    ('Odile', 'didi.jpeg', 'Odile a un chien qui s''appel didi', '2019-01-08 05:21:24', '6'),
+    ('Youka', 'youyou.jpeg', 'Youka a un chien qui s''appel youyou', '2019-01-08 05:21:24', '7'),
+    ('Sabine', 'abio.jpeg', 'Sabine a un chien qui s''appel abio', '2019-01-08 05:21:24', '8'),
+    ('Marina', 'koue.jpeg', 'Marina a un chien qui s''appel koue', '2019-01-08 05:21:24', '9'),
+    ('Mohamad', 'momo.jpeg', 'Mohamad a un chien qui s''appel momo', '2019-01-08 05:21:24', '10'),
+    ('ange', 'anjuide.jpeg', 'Ange a un autre chien qui s''appel anjuide', '2019-01-08 05:21:24', '1'),
+    ('Marine', 'mareine.jpeg', 'Marine a un autre chien qui s''appel mareine', '2019-01-08 05:21:24', '2'),
+    ('Youka', 'youyou.jpeg', 'Youka a un autre chien qui s''appel youyou', '2019-01-08 05:21:24', '3'),
+    ('Eulalia', 'lulu.jpeg', 'Eulalia a un autre chien qui s''appel lulu', '2019-01-08 05:21:24', '4'),
+    ('Alessandro', 'porci.jpeg', 'Alessandro a un autre chien qui s''appel porci', '2019-01-08 05:21:24', '5')
 ;
 
 INSERT INTO Comment (comment, publicationDate, articleId, userId) VALUES 
@@ -74,3 +74,6 @@ INSERT INTO Comment (comment, publicationDate, articleId, userId) VALUES
     ('Allo!', '2019-01-08 05:21:24', '4', '1'),
     ('Magnifique', '2019-01-08 05:21:24', '5', '1')
 ;
+
+
+

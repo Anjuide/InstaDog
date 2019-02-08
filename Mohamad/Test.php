@@ -32,6 +32,7 @@ foreach ($userProfile as $uP)
 {
     echo "$uP <br>";
 }
+
 var_dump($userProfile);
 
 echo "User ID :  " . $id . "</br>" . "</br>";
@@ -47,5 +48,20 @@ echo "Country : " . $country . "</br>" . "</br>";
 
 echo "City : " . $city . "</br>" . "</br>";
 
+
+
+/*$listDog = $appli->getListRaces(1);
+
+
+
+$DogProfile = $appli->getProfileDogById(1);
+
+echo "</br>" . "</br>"; 
+
+foreach ($DogProfile as $dP)
+{
+    echo "$dP <br>";
+}
+var_dump($DogProfile); */
 
 ?>

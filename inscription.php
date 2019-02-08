@@ -1,6 +1,10 @@
 <?php 
 $title = "Profil de l'utilisateur";
-include "header.php"
+include "header.php";
+require('config.php');
+//include ('login.php');
+//$appli  = new Connexion();
+
 ?>
 <div class="container">
     <div class="row">
@@ -9,25 +13,25 @@ include "header.php"
           <div class="card-body">
             <h5 class="card-title text-center">Inscrivez-vous</h5>
             <hr class="my-4">
-            <form class="form-signin">
+            <form method="post" action="login.php" class="form-signin">
 
               <div class="form-label-group">
                 <label for="inputEmail">Adresse e-mail</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus> 
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus> 
               </div>
 
               <div class="form-label-group">
                 <label for="inputPassword">Mot de passe</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                <input type="password" name="password_1" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
               </div>
 
               <div class="form-label-group">
                 <label for="inputPasswordConfirm">Confirmez le mot de passe</label>
-                <input type="password" id="inputPasswordConfirm" class="form-control" placeholder="Confirmez le mot de passe" required>
+                <input type="password" name="password_2" id="inputPasswordConfirm" class="form-control" placeholder="Confirmez le mot de passe" required>
               </div>
               <hr class="my-4">
               
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">S'inscrire</button>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" name="reg_user" type="submit">S'inscrire</button>
                 <div class="text-center">
                   <a class="small" href="connexion.php">Vous avez déjà un compte? Connectez-vous ici</a>
                 </div>
@@ -40,6 +44,18 @@ include "header.php"
       </div>
     </div>
   </div>
+
+  <?php
+
+  if (isset($_POST['reg_user'])) {
+
+    
+
+  }
+  ?>
+
+
+
 <?php 
 include "footer.php"
 ?>

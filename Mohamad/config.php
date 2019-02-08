@@ -46,8 +46,28 @@ class Connexion
         $userProfile=$requete_prepare->fetchObject("UserProfile");
         return $userProfile; 
     }
+
+
+    public function getProfileDogById($id) {
+
+        $requete_prepare = $this->connexion->prepare(
+            "SELECT d.id, d.nickeName, d.birthday, d.picture, r.id as raceId, r.nameRace as raceNameRace,
+             dr.idDog as dogRaceIdDog, dr.idRace as dogRaceIdRace FROM Dog d 
+            INNER JOIN DogRace dr ON d.id      = dr.idDog
+            INNER JOIN Race r     ON dr.idRace = r.id
+            WHERE d.id = :id;");
+
+        $requete_prepare -> execute(array("id" => $id ));
+        $contrat=$requete_prepare->fetchObject("Dog");
+        return $DogProfile; 
+
+    }
+
+
 }
 
+
+    
 class UserDog {
 
     public $id;
@@ -108,7 +128,27 @@ class Dog {
         public function setUserId($userId) { $this->userId = $userId; }
         public function getUserId() { return $this->userId; }
         public function setListRaces($listRaces) { $this->listRaces = $listRaces; }
-        public function getListRaces() { return $this->listRaces; }
+        
+        public function getListRaces() {
+            $requete_prepare = $this->connexion -> prepare (
+                "SELECT r.nameRace 
+                FROM Race r
+                INNER JOIN DogRace dr
+                ON r.id = dr.raceId
+                WHERE dr.dogId = :dogId" 
+            );
+            // J'execute la requête en passant la valeur
+            $requete_prepare -> execute (
+                array ('dogId' => $dogId
+                )
+            );
+            // Je récupère le résultat de la requête
+            $listRaces = $requete_prepare->fetchAll (PDO::FETCH_OBJ);
+            // Je retourne la liste de hobbies
+            return listRaces;
+             }
+
+
         public function setListArticles($listArticles) { $this->listArticles = $listArticles; }
         public function getListArticles() { return $this->listArticles; }
 

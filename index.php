@@ -2,15 +2,45 @@
 // Titre de la page
 $title = "Bienvenue sur Instadog";
 // INCLURE LE HEADER
-include "header.php"
-?>
-<!-- CONTAINER DU BODY -->
-<div class="container">
-    <div class="row">
-        <!-- IMAGE DU CHIEN ET SON NICKNAME -->
+include "header.php";
+require('config.php');
+$appli       = new Connexion();
+
+$dogs        = $appli->getAllDogs();
+
+/* ------------------------------------------------------------------------------------------------------*/
+/* ////////////////////////////   APPELER LES FUNCTION POUR RECUPER LES DATA   //////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/
+
+
+
+/* ///////// CONTAINER DU BODY /////////*/
+
+echo "<div class=\"container\">";
+    echo "<div class=\"row\">";
+       /////////* IMAGE DU CHIEN ET SON NICKNAME /////////*///
+       foreach  ($dogs  as  $dogy) { 
+        $picture  = $dogy->getPicture();
+        $nickName = $dogy->getNickName();
+        $id       = $dogy->getId();
+         
+        echo "<div class=\"card col-lg-3 col-md-4\" style=\"width: 17rem; margin:auto; padding:0;\">";
+        echo     "<a href=\"profil_du_chien.php?id=$id\">";
+        echo         "<img class=\"card-img-top\" src=\"$picture\">";
+        echo         "<div class=\"card-img-overlay\">";
+        echo            "<h4 class=\"card-title dogyy\">$nickName</h4>";     
+        echo        "</div>";
+        echo    "</a>";
+        echo "</div>";
+        }
+
+        echo   "</div>";
+        echo "</div>";
+        ?>
+<!--
         <div class="card col-lg-3 col-md-4" style="width: 17rem; margin:auto; padding:0;">
             <a href="profil_du_chien.php">
-                <img class="card-img-top" src="images/D1.jpeg" alt="Photo de profil de ">
+                <img class="card-img-top" src="https://i.pinimg.com/originals/96/0d/f4/960df454b14816497f877c48e4705dc0.jpg" alt="Photo de profil de ">
                 <div class="card-img-overlay">
                     <h4 class="card-title dogyy">Scooby-Dooo</h4>     
                 </div>
@@ -186,9 +216,11 @@ include "header.php"
                     <h4 class="card-title dogyy">Scooby-Dooo</h4>  
                 </div>
             </a>
-        </div>
+        </div>  
     </div>
-</div>
+</div>-->
+
+
 <?php 
 // INCLURE FOOTER
 include "footer.php"

@@ -1,6 +1,10 @@
 <?php 
 $title = "Profil de l'utilisateur";
-include "header.php"
+include "header.php";
+require('config.php');
+$appli = new Connexion();
+
+
 ?>
 <div class="container">
     <div class="row">
@@ -9,22 +13,22 @@ include "header.php"
           <div class="card-body">
             <h5 class="card-title text-center">Connexion</h5>
             <hr class="my-4">
-            <form class="form-signin">
+            <form method="post" action="connexion.php" class="form-signin">
               <div class="form-label-group">
                 <label for="inputEmail">Adresse e-mail</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus> 
+                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus> 
               </div>
 
               <div class="form-label-group">
                 <label for="inputPassword">Mot de passe</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
               </div>
               <hr class="my-4">
               <!-- <div class="custom-control custom-checkbox mb-3">
                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1">Se souvenir de moi</label>
               </div> -->
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Connexion</button>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" name="log_user" type="submit">Connexion</button>
               <div class="text-center">
                   <a class="small" href="#">Mot de passe oublié?</a>
               </div>
@@ -40,6 +44,76 @@ include "header.php"
       </div>
     </div>
   </div>
+
+<?php
+
+  $email    = "";
+
+  $errors = array(); 
+
+  if (isset($_POST['log_user'])) {
+
+
+  // receive all input values from the form
+
+   
+    $email    =  ($_POST['email']);
+
+    $password =  ($_POST['password']);
+
+    
+    // form validation: ensure that the form is correctly filled ...
+    // by adding (array_push()) corresponding error unto $errors array
+
+
+  if (empty($email)) { array_push($errors, "Email is required"); }
+
+  if (empty($password)) { array_push($errors, "Password is required"); }
+
+
+  // first check the database to make sure 
+  // a user is already exist with the same  email
+
+  $user = $appli->checkUserIsExist($email);
+
+  if ($user) { // if user exists
+
+     
+
+    $pwd = $user->getPwd();
+
+    $id  = $user->getId();
+
+    
+    if (password_verify($password, $pwd)) { //Verify the Entered password With saving in the database
+
+      $appli->insertLastConnectionDateToUser($id);
+
+      $_SESSION['username'] = $email;
+
+      $_SESSION['useeId'] = $id;
+
+      $_SESSION['success'] = "You are now logged in";
+
+      echo 'You are now logged in';
+
+      echo $id;
+
+
+    } else {
+
+      echo 'Le mot pass ou email ';
+
+    }  
+ 
+     
+  }
+    
+
+}
+?>
+
+
 <?php 
 include "footer.php"
 ?>

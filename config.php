@@ -36,7 +36,9 @@ class Connexion
         }
     }
 
-
+/* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////////    getProfileUserById   //////////////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/
     public function getProfileUserById($id) {
 
         $requete_prepare = $this->connexion->prepare(
@@ -46,7 +48,152 @@ class Connexion
         $userProfile=$requete_prepare->fetchObject("UserProfile");
         return $userProfile; 
     }
+
+/* ------------------------------------------------------------------------------------------------------*/
+/* //////////////////////////////////////  getAllDogsUser   /////////////////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/
+
+    public function getAllDogsUser($id){
+        $requete_prepare = $this->connexion->prepare(
+            "SELECT *  FROM Dog
+             WHERE userId = :id");
+
+        $requete_prepare -> execute(array("id" => $id ));
+        $dogs=$requete_prepare->fetchAll(PDO::FETCH_CLASS, 'Dog');
+        return $dogs; 
+    }  
+/* ------------------------------------------------------------------------------------------------------*/
+/* //////////////////////////////////////    getAllDogs     /////////////////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/    
+    
+    public function getAllDogs(){
+        
+        $requete_prepare = $this->connexion->prepare(
+            "SELECT * FROM Dog");   
+        
+        $requete_prepare->execute();
+         
+        $dogs=$requete_prepare->fetchAll(PDO::FETCH_CLASS, 'Dog');
+        return $dogs;
+    }
+
+/* ------------------------------------------------------------------------------------------------------*/
+/* //////////////////////////////////////    getDogById     /////////////////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/    
+    
+    public function getDogById($id) {
+
+        $requete_prepare = $this->connexion->prepare(
+            "SELECT * FROM Dog WHERE id = :id");
+
+        $requete_prepare -> execute(array("id" => $id ));
+        $userProfile=$requete_prepare->fetchObject("Dog");
+        return $userProfile; 
 }
+
+/* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////    get_User_De_Un_Dog_By_User_Id     /////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/ 
+    
+    public function getUserDeUnDogByUserId($id) {
+
+        $requete_prepare = $this->connexion->prepare(
+            "SELECT  * FROM userDog  WHERE id = :id");
+
+        $requete_prepare -> execute(array("id" => $id ));
+        $userDog=$requete_prepare->fetchObject("userDog");
+        return $userDog; 
+
+}
+
+/* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////    get_Tous_Dog_Article     /////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/ 
+
+    public function getArticlsByDogId($id) {
+
+        $requete_prepare = $this->connexion->prepare(
+            "SELECT  * FROM Article  WHERE dogid = :id");
+
+            $requete_prepare -> execute(array("id" => $id));
+        $articls=$requete_prepare->fetchAll(PDO::FETCH_CLASS, 'Articl');
+        return $articls; 
+
+     }
+/* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////   User Iscripation    /////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/ 
+
+
+     function insertUser($email, $pwd) {
+           
+        $requete_prepare = $this->connexion -> prepare(
+            "INSERT INTO UserDog (email, pwd) values (:email, :pwd)");
+ 
+        $requete_prepare -> execute(
+            array( 'email' => $email,
+                    'pwd' => $pwd)); 
+ 
+ } 
+
+/* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////   Check If The User is Exist         /////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/ 
+
+    public  function checkUserIsExist($email){
+         
+             
+        $requete_prepare = $this->connexion->prepare(
+            "SELECT * FROM UserDog WHERE email =  :email");
+        
+        $requete_prepare -> execute(array("email" => "$email",));
+
+        $checkUser = $requete_prepare->fetchObject("UserDog");
+
+        return $checkUser;
+
+    }
+
+/* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////          Get Last Entered ID        /////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/ 
+
+
+    public function getLastId(){
+
+        return $this->connexion->lastInsertId();
+
+    }
+
+/* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////   insertLastConnectionDateToUser     /////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/ 
+
+    function insertLastConnectionDateToUser($id) {
+           
+        $requete_prepare = $this->connexion -> prepare(
+            "UPDATE UserDog SET lastConnectionDate = NOW()
+             WHERE id = :id");
+
+        $requete_prepare -> execute(array("id" => $id));
+
+    }      
+
+/* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////                /////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/ 
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------*/
+/* -----------------------------------------La FIN DE CLASS CONNEXION------------------------------------*/
+}      
+/* -----------------------------------------La FIN DE CLASS CONNEXION------------------------------------*/
+/* ------------------------------------------------------------------------------------------------------*/
 
 class UserDog {
 
@@ -55,14 +202,14 @@ class UserDog {
     public $pwd;
     public $lastConnectionDate;
 
-        public function __set($name, $value){}
-        public function setId($id) { $this->id = $id; }
-        public function getId() { return $this->id; }
-        public function setEmail($email) { $this->email = $email; }
-        public function getEmail() { return $this->email; }
-        public function setPwd($pwd) { $this->pwd = $pwd; }
-        public function getPwd() { return $this->pwd; }
-        public function setLastConnectionDate($lastConnectionDate) { $this->lastConnectionDate = $lastConnectionDate; }
+        public function __set($name, $vgetPwd()lue){}
+        public function setId($id) { $tgetPwd()is->id = $id; }
+        public function getId() { returgetPwd() $this->id; }
+        public function setEmail($emailgetPwd() { $this->email = $email; }
+        public function getEmail() { regetPwd()urn $this->email; }
+        public function setPwd($pwd) { getPwd()this->pwd = $pwd; }
+        public function getPwd() { retugetPwd()n $this->pwd; }
+        public function setLastConnectigetPwd()nDate($lastConnectionDate) { $this->lastConnectionDate = $lastConnectionDate; }
         public function getLastConnectionDate() { return $this->lastConnectionDate; }
 }
 
@@ -170,6 +317,10 @@ class Comment {
 }
 
 
+/*"SELECT d.id, d.userId,  u.firstName as firstNameUser, u.city as cityUser,
+FROM Dog d INNER JOIN 
+
+ WHERE id = :id");  */
 
 
 
