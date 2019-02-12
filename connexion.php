@@ -1,5 +1,6 @@
 <?php 
 $title = "Profil de l'utilisateur";
+session_start();
 include "header.php";
 require('config.php');
 $appli = new Connexion();
@@ -24,10 +25,7 @@ $appli = new Connexion();
                 <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
               </div>
               <hr class="my-4">
-              <!-- <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Se souvenir de moi</label>
-              </div> -->
+               
               <button class="btn btn-lg btn-primary btn-block text-uppercase" name="log_user" type="submit">Connexion</button>
               <div class="text-center">
                   <a class="small" href="#">Mot de passe oublié?</a>
@@ -46,30 +44,22 @@ $appli = new Connexion();
   </div>
 
 <?php
-
   $email    = "";
-
   $errors = array(); 
-
+  
   if (isset($_POST['log_user'])) {
-
 
   // receive all input values from the form
 
-   
     $email    =  ($_POST['email']);
-
     $password =  ($_POST['password']);
 
-    
     // form validation: ensure that the form is correctly filled ...
     // by adding (array_push()) corresponding error unto $errors array
-
 
   if (empty($email)) { array_push($errors, "Email is required"); }
 
   if (empty($password)) { array_push($errors, "Password is required"); }
-
 
   // first check the database to make sure 
   // a user is already exist with the same  email
@@ -77,32 +67,28 @@ $appli = new Connexion();
   $user = $appli->checkUserIsExist($email);
 
   if ($user) { // if user exists
-
      
-
     $pwd = $user->getPwd();
-
     $id  = $user->getId();
-
     
     if (password_verify($password, $pwd)) { //Verify the Entered password With saving in the database
 
       $appli->insertLastConnectionDateToUser($id);
 
       $_SESSION['username'] = $email;
-
-      $_SESSION['useeId'] = $id;
-
+      $_SESSION['userId'] = $id;
       $_SESSION['success'] = "You are now logged in";
 
       echo 'You are now logged in';
 
       echo $id;
 
+      echo "<script> window.location.href =\"profileAvecLeChien.php\"</script>";
+
 
     } else {
 
-      echo 'Le mot pass ou email ';
+      echo 'Mouvais un mot pass ou un email  ';
 
     }  
  

@@ -3,8 +3,16 @@ $title = "Profil du chien";
 include "header.php";
 
 require('config.php');
+
+
+
 $appli       = new Connexion();
 $id          = $_GET["id"];
+
+
+session_start(); 
+$_SESSION['useeId'] = $id;     /* Stocker Un Id de Chien pour l'utiliser dans le Ajouter Aricl Page */
+
 
 /* ------------------------------------------------------------------------------------------------------*/
 $dog        = $appli->getDogById($id);       /* Appler La Function pour Récupérer data  de DOG */
@@ -13,6 +21,8 @@ $picture    = $dog->getPicture();
 $nickName   = $dog->getNickName();
 $birthday   = $dog->getBirthday();
 $userId     = $dog->getUserId();
+
+$_SESSION['picture'] = $picture;
 
 /* ------------------------------------------------------------------------------------------------------*/
 $usrDog    = $appli->getProfileUserById($userId);   /* Appler La Function pour Récupérer data  de USERDOG */
@@ -25,6 +35,7 @@ $city      = $usrDog->getCity();
 $articls   = $appli->getArticlsByDogId($id);  /* Appler La Function pour Récupérer data  de Articls    */
 /* ------------------------------------------------------------------------------------------------------*/
  
+
 
  
 ?>

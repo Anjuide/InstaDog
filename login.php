@@ -63,7 +63,7 @@ if (isset($_POST['reg_user'])) {
 
     $_SESSION['username'] = $email;
 
-    $_SESSION['useeId'] = $id;
+    $_SESSION['userId'] = $id;
 
     $_SESSION['success'] = "You are now logged in";
 

@@ -125,7 +125,7 @@ class Connexion
 /* ------------------------------------------------------------------------------------------------------*/ 
 
 
-     function insertUser($email, $pwd) {
+    public function insertUser($email, $pwd) {
            
         $requete_prepare = $this->connexion -> prepare(
             "INSERT INTO UserDog (email, pwd) values (:email, :pwd)");
@@ -140,7 +140,7 @@ class Connexion
 /* ///////////////////////////////   Check If The User is Exist         /////////////////////////////////*/
 /* ------------------------------------------------------------------------------------------------------*/ 
 
-    public  function checkUserIsExist($email){
+    public function checkUserIsExist($email){
          
              
         $requete_prepare = $this->connexion->prepare(
@@ -169,7 +169,7 @@ class Connexion
 /* ///////////////////////////////   insertLastConnectionDateToUser     /////////////////////////////////*/
 /* ------------------------------------------------------------------------------------------------------*/ 
 
-    function insertLastConnectionDateToUser($id) {
+    public function insertLastConnectionDateToUser($id) {
            
         $requete_prepare = $this->connexion -> prepare(
             "UPDATE UserDog SET lastConnectionDate = NOW()
@@ -180,47 +180,100 @@ class Connexion
     }      
 
 /* ------------------------------------------------------------------------------------------------------*/
-/* ///////////////////////////////                /////////////////////////////////*/
+/* ///////////////////////////////          UpdateUserProfile           /////////////////////////////////*/
 /* ------------------------------------------------------------------------------------------------------*/ 
 
+    public function UpdateUserProfile($id, $lastName, $firstName, $country, $city) {
+           
+        $requete_prepare = $this->connexion -> prepare(
+            "UPDATE UserDog SET lastName = :lastName, firstName = :firstName, country = :country, 
+            city = :city WHERE id = :id");
+     
+        $requete_prepare -> execute(array('id' => $id,
+                                          'lastName'  => $lastName,
+                                          'firstName' => $firstName,
+                                          'country' => $country,
+                                          'city' => $city));
+
+
+    }
+
+/* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////          Insert Nouveau Dog          /////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/ 
+     
+    public  function insertDog($nickName, $birthday, $picture, $userId) {
+           
+        $requete_prepare = $this->connexion -> prepare(
+            "INSERT INTO Dog (nickName, birthday, picture, userId) values (:nickName, :birthday,
+                         :picture, :userId)");
+
+        $requete_prepare -> execute(                    
+                array( 'nickName' => $nickName,
+                       'birthday' => $birthday,
+                       'picture' => $picture,
+                       'userId' => $userId));                  
+
+    }
+    
+/* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////            getAllRaces              /////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/ 
+    public function getAllRaces() {
+   
+        $requete_prepare = $this->connexion -> prepare(
+            "SELECT nameRace FROM Race");
+ 
+        $requete_prepare -> execute();
+        $race=$requete_prepare->fetchAll(PDO::FETCH_OBJ);
+ 
+        return $race;
+ }
 
 
 
+/* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////                   /////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/ 
+   
+     
 
-
-
+    
 /* ------------------------------------------------------------------------------------------------------*/
 /* -----------------------------------------La FIN DE CLASS CONNEXION------------------------------------*/
 }      
 /* -----------------------------------------La FIN DE CLASS CONNEXION------------------------------------*/
 /* ------------------------------------------------------------------------------------------------------*/
 
-class UserDog {
+
+ class UserDog {
 
     public $id;
     public $email;
     public $pwd;
     public $lastConnectionDate;
 
-        public function __set($name, $vgetPwd()lue){}
-        public function setId($id) { $tgetPwd()is->id = $id; }
-        public function getId() { returgetPwd() $this->id; }
-        public function setEmail($emailgetPwd() { $this->email = $email; }
-        public function getEmail() { regetPwd()urn $this->email; }
-        public function setPwd($pwd) { getPwd()this->pwd = $pwd; }
-        public function getPwd() { retugetPwd()n $this->pwd; }
-        public function setLastConnectigetPwd()nDate($lastConnectionDate) { $this->lastConnectionDate = $lastConnectionDate; }
+        public function __set($name, $value){}
+        public function setId($id) { $this->id = $id; }
+        public function getId() { return $this->id; }
+        public function setEmail($email) { $this->email = $email; }
+        public function getEmail() { return $this->email; }
+        public function setPwd($pwd) { $this->pwd = $pwd; }
+        public function getPwd() { return $this->pwd; }
+        public function setLastConnectionDate($lastConnectionDate) { $this->lastConnectionDate = $lastConnectionDate; }
         public function getLastConnectionDate() { return $this->lastConnectionDate; }
+
 }
 
 class UserProfile extends UserDog {
-     
+
     private $lastName;
     private $firstName;
     private $country;
     private $city;
     private $listDogs;
 
+         
         public function setLastName($lastName) { $this->lastName = $lastName; }
         public function getLastName() { return $this->lastName; }
         public function setFirstName($firstName) { $this->firstName = $firstName; }
@@ -287,7 +340,6 @@ class Articl {
         public function getDogId() { return $this->dogId; }
         public function setListComments($listComments) { $this->listComments = $listComments; }
         public function getListComments() { return $this->listComments; }
-    
 
 
 
@@ -315,14 +367,5 @@ class Comment {
 
 
 }
-
-
-/*"SELECT d.id, d.userId,  u.firstName as firstNameUser, u.city as cityUser,
-FROM Dog d INNER JOIN 
-
- WHERE id = :id");  */
-
-
-
 
 ?>

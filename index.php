@@ -34,7 +34,7 @@ echo "<div class=\"container\">";
         echo "</div>";
         }
 
-        echo   "</div>";
+        echo   "</div>";$id = $appli->getLastId();
         echo "</div>";
         ?>
 <!--
