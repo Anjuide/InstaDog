@@ -4,8 +4,8 @@
 }
 
 body {
-  background: #d4d9dd;
-  background: linear-gradient(to right, rgb(204, 207, 212), rgb(217, 229, 236));
+  background: #ffffff;
+  /* background: linear-gradient(to right, rgb(204, 207, 212), rgb(217, 229, 236)); */
 }
 
 .card-signin {
@@ -204,7 +204,7 @@ margin:0;
 .post-bgscreen{padding:3em 0 5em}
 .post .post-bgscreen{padding:1em 0}
 .post .post-container{width:300px}
-.post .post-content{width:300px;height:300px}
+.post .post-content{width:300px}
 .post .post-header h2{padding-right:3.5em}.post .post-header .post-stamp{top:0;bottom:auto}
 
 .post .post-comments ul li.comment{padding-left:.5em}
@@ -218,7 +218,7 @@ margin:0;
 .post .post-container{width:400px}
 .post .post-header h2{padding-right:3.5em}
 
-.post .post-content{width:400px;height:400px}
+.post .post-content{width:400px}
 
 .post .post-actions{padding:3.5em 0 0}
 }
@@ -228,7 +228,7 @@ margin:0;
 .post .post-container{width:612px}
 .post .post-header h2{padding-right:9em}
 .post .post-header .post-stamp .post-time{padding-left:1em}
-.post .post-content{width:612px;height:612px}
+.post .post-content{width:612px}
 .post .post-actions{padding:1em 0 0}.post .post-actions .post-caption{margin:0 172px 0 0}
 }
 @media screen and (min-width:74em){
@@ -238,4 +238,7 @@ margin:0;
 @media screen and (min-width:90em){
 .post .post-bgscreen{padding:4em 0 10em}
 .post-bgscreen{padding:5em 0 10em}
+}
+.menu-deroulant{
+  left: -20%;
 }
