@@ -325,6 +325,7 @@ class Connexion
                     'city' => $city
             )
         );
+        return $this->connexion->lastInsertId();
     }
     /* ------------------------------------------------------------------------------------------------------*/
     /* -------------------- FONCTION RECHERCHER UN CHIEN PAR NOM OU RACE ----------------------------------- */
@@ -346,6 +347,19 @@ class Connexion
         // Je retourne un objet Comment
         return $listDogs;
     }
+    /* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////   insertLastConnectionDateToUser     /////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/ 
+
+public function insertLastConnectionDateToUser($id) {
+           
+    $requete_prepare = $this->connexion -> prepare(
+        "UPDATE UserDog SET lastConnectionDate = NOW()
+         WHERE id = :id");
+
+    $requete_prepare -> execute(array("id" => $id));
+
+}   
 }
 
 // CLASSE USERDOG
