@@ -1,6 +1,14 @@
 <?php 
+// SE CONNECTER A LA BASE DE DONNEES
+require("classes/Connexion.php");
+// ON DEMARRE LA SESSION AVANT D'ECRIRE DU CODE HTML
+session_start();
+// DEMARRER UN NOUVEL OBJET DE CONNEXION
+$appli = new Connexion();
+// TITRE DE LA PAGE
 $title = "Profil de l'utilisateur";
-include "header.php"
+// INCLURE LE HEADER
+include "header.php";
 ?>
 <div class="container">
     <div class="row">
