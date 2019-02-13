@@ -70,10 +70,28 @@ class Connexion
         // Je retourne un objet Profile
         return $userProfile;
     }
+
+    public function getUsersByEmail($email)
+    {
+        // Je prépare la requête 
+        $requete_prepare = $this->connexion->prepare(
+            "SELECT * 
+            FROM UserDog
+            WHERE email = :email"
+        );
+        // J'execute la requête en passant la valeur
+        $requete_prepare->execute(
+            array('email' => $email)
+        );
+        // Je récupère le résultat de la requête en mappant avec la classe Profile
+        $userProfile = $requete_prepare->fetchObject("Profile");
+        // Je retourne un objet Profile
+        return $userProfile;
+    }
     /* ------------------------------------------------------------------------------------------------------*/
     /* ----------------------------------------------DOG(S)------------------------------------------------- */
     /* ------------------------------------------------------------------------------------------------------*/
-    public function getDogs()
+    public function getDogs() // => index.php
     {
         // Je prépare la requête 
         $requete_prepare = $this->connexion->prepare(
@@ -88,7 +106,7 @@ class Connexion
         return $listDogs;
     }
 
-    public function getDogProfile($id)
+    public function getDogProfile($id) // => profil-du-chien.php
     {
         // Je prépare la requête 
         $requete_prepare = $this->connexion->prepare(
@@ -121,8 +139,8 @@ class Connexion
         // Je récupère le résultat de la requête en mappant avec la classe Dog
         $listUserDogs = $requete_prepare->fetchAll(PDO::FETCH_CLASS, 'Dog');
         // Je retourne une liste d'objets Dog
-        $test = new Profile();
-        $test->setListDogs($listUserDogs);
+        // $test = new Profile();
+        // $test->setListDogs($listUserDogs);
         return $listUserDogs;
     }
     /* ------------------------------------------------------------------------------------------------------*/
@@ -161,7 +179,7 @@ class Connexion
         return $article;
     }
 
-    public function getDogArticles($dogId)
+    public function getDogArticles($dogId) // profil-du-chien.php
     {
         // Je prépare la requête 
         $requete_prepare = $this->connexion->prepare(
@@ -307,6 +325,26 @@ class Connexion
                     'city' => $city
             )
         );
+    }
+    /* ------------------------------------------------------------------------------------------------------*/
+    /* -------------------- FONCTION RECHERCHER UN CHIEN PAR NOM OU RACE ----------------------------------- */
+    /* ------------------------------------------------------------------------------------------------------*/
+    public function getDogsByKeywords($keywords)
+    {
+        // Je prépare la requête 
+        $requete_prepare = $this->connexion->prepare(
+            "SELECT * 
+            FROM Dog
+            WHERE nickname LIKE :keywords"
+        );
+        // J'execute la requête en passant la valeur
+        $requete_prepare->execute(
+            array('keywords' => "%$keywords%")
+        );
+        // Je récupère le résultat de la requête sous forme d'objet en mappant avec la classe Dog
+        $listDogs = $requete_prepare->fetchAll(PDO::FETCH_CLASS, 'Dog');
+        // Je retourne un objet Comment
+        return $listDogs;
     }
 }
 
