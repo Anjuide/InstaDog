@@ -46,7 +46,7 @@
         <a class="nav-link" href="ajouter-un-chien.php">Ajouter un compagnon</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="index.php" method="post" enctype="multipart/form-data">
+    <form class="form-inline my-2 my-lg-0" action="index.php" method="get" enctype="multipart/form-data">
       <input class="form-control mr-sm-2" type="search" name ="keywords" placeholder="Rechercher par race, nom ou ville" aria-label="Search">
       <!-- <button type="submit"><i class="btn btn-outline-success my-2 my-sm-0 fa fa-search"></i></button> -->
       <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button> -->
