@@ -120,13 +120,90 @@ $userId = $_SESSION['userId'];
 
           $dogId = $appli->getLastId();
       
-          foreach ($_POST['subject'] as $subject);
+          foreach ($_POST['subject'] as $subject){
 
-          $raceDog = $subject;
-          echo $subject;
+        
+
+?>
 
 
-}
+
+
+
+
+<?php 
+
+?>
+
+
+
+
+
+
+<?php raceDog = $subject;
+
+?>
+
+
+
+
+
+
+<?php  $subject;
+
+?>
+
+
+
+
+
+
+<?php 
+
+?>
+
+
+
+
+
+
+<?php 
+
+?>
+
+
+
+
+
+
+<?php 
+
+?>
+
+
+
+
+
+
+<?php 
+
+?>
+
+
+
+
+
+
+<?php 
+
+?>
+
+
+
+
+
+
+<?php 
 
 ?>
 
