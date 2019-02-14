@@ -47,9 +47,6 @@ if (isset($_POST['inscription'])) {
                 </button>
                 </div>';
     }
-} else {
-    // echo "<script type='text/javascript'>document.location.replace('inscription.php');</script>";
-   // header("Location: inscription.php");
 }
 
 

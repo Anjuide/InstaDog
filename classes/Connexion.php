@@ -348,19 +348,33 @@ class Connexion
         return $listDogs;
     }
     /* ------------------------------------------------------------------------------------------------------*/
-/* ///////////////////////////////   insertLastConnectionDateToUser     /////////////////////////////////*/
-/* ------------------------------------------------------------------------------------------------------*/ 
+    /* ///////////////////////////////   insertLastConnectionDateToUser     /////////////////////////////////*/
+    /* ------------------------------------------------------------------------------------------------------*/ 
 
-public function insertLastConnectionDateToUser($id) {
-           
-    $requete_prepare = $this->connexion -> prepare(
-        "UPDATE UserDog SET lastConnectionDate = NOW()
-         WHERE id = :id");
+    public function insertLastConnectionDateToUser($id) {
+            
+        $requete_prepare = $this->connexion -> prepare(
+            "UPDATE UserDog SET lastConnectionDate = NOW()
+            WHERE id = :id");
 
-    $requete_prepare -> execute(array("id" => $id));
+        $requete_prepare -> execute(array("id" => $id));
 
-}   
+    }
+    /* ------------------------------------------------------------------------------------------------------*/
+    /* ///////////////////////////////            getAllRaces              /////////////////////////////////*/
+    /* ------------------------------------------------------------------------------------------------------*/ 
+    public function getAllRaces() {
+    
+        $requete_prepare = $this->connexion -> prepare(
+            "SELECT nameRace FROM Race");
+
+        $requete_prepare -> execute();
+        $race=$requete_prepare->fetchAll(PDO::FETCH_OBJ);
+
+        return $race;
+    }   
 }
+    
 
 // CLASSE USERDOG
 include "UserDog.php";

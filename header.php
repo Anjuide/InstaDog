@@ -43,7 +43,7 @@
         <a class="nav-link" href="articles.php">Articles</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="ajouter-un-chien.php">Ajouter un compagnon</a>
+        <a class="nav-link" href="ajouter-un-chien.php">Ajouter un chien</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" action="index.php" method="get" enctype="multipart/form-data">
