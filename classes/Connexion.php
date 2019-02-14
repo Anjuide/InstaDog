@@ -298,12 +298,12 @@ class Connexion
             VALUE (:nickname, :birthday, :picture, :userId)"
         );
         // on exécute la requête
-        $requfetchAll(PDO::FETCH_CLASS, 'Dog');
-            afetchAll(PDO::FETCH_CLASS, 'Dog');
-             fetchAll(PDO::FETCH_CLASS, 'Dog');
-             fetchAll(PDO::FETCH_CLASS, 'Dog');
-             fetchAll(PDO::FETCH_CLASS, 'Dog');
-            )fetchAll(PDO::FETCH_CLASS, 'Dog');
+        $requete_prepare->execute (
+            array ( 'nickname' => $nickname,
+                    'birthday' => $birthday,
+                    'picture' => $picture,
+                    'userId' => $userId
+            )
         );
     }
     /* ------------------------------------------------------------------------------------------------------*/
@@ -325,12 +325,12 @@ class Connexion
                     'country' => $country,
                     'city' => $city
             )
-        );fetchAll(PDO::FETCH_CLASS, 'Dog');
-        return $this->connexion->lastInsertId();fetchAll(PDO::FETCH_CLASS, 'Dog');
-    }fetchAll(PDO::FETCH_CLASS, 'Dog');
-    /* ----------------------------------------------------fetchAll(PDO::FETCH_CLASS, 'Dog');--------------------------------------------------*/
-    /* -------------------- FONCTION RECHERCHER UN CHIEN PAfetchAll(PDO::FETCH_CLASS, 'Dog');R NOM OU RACE ----------------------------------- */
-    /* ----------------------------------------------------fetchAll(PDO::FETCH_CLASS, 'Dog');--------------------------------------------------*/
+        );
+        return $this->connexion->lastInsertId();
+    }
+    /* ------------------------------------------------------------------------------------------------------*/
+    /* -------------------- FONCTION RECHERCHER UN CHIEN PAR NOM OU RACE ----------------------------------- */
+    /* ------------------------------------------------------------------------------------------------------*/
     public function getDogsByKeywords($keywords)
     {
         // Je prépare la requête 
