@@ -2,7 +2,7 @@
 // SI L'UTILISATEUR A APPUYÉ SUR LE BOUTON INSCRIPTION
 if (isset($_POST['ajouterArticle'])) {
     // SI IL N'A PAS DE CHAMPS VIDES
-    if (!empty($_POST['title']) and !empty($_POST['description']) and !empty($_FILES['picture']) ) {
+    if (!empty($_POST['title']) and !empty($_POST['description']) and !empty($_FILES['picture'])) {
         include("classes/functions.php");      
         // RECUPERER LES POSTS
         $title = $_POST['title'];
@@ -14,8 +14,9 @@ if (isset($_POST['ajouterArticle'])) {
 // FAIRE UNE FONCTION QUI VERIFIE SI LE FICHIER A BIEN ETE AJOUTER AVANT D'AJOUTER LE CHIEN
 // LA FONCTION DOIT POUVOIR AUSSI RETOURNER LES ERREURS
         // APPEL DE MA FONCTION QUI AJOUTE UN CHIEN
-        $appli->setArticle ($title, $picture, $description, $publicationDate, $dogId);
-       echo "<script type='text/javascript'>document.location.replace('article-du-chien.php?id=$dogId.php');</script>";
+        $idArticle = $appli->setArticle($title, $picture, $description, $publicationDate, $dogId);
+
+        echo "<script type='text/javascript'>document.location.replace('article-du-chien.php?id=$idArticle.php');</script>";
     } else {
         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                 Veuillez remplir tous les champs obligatoires.
