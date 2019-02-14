@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 -- Structure de la table `article`
 --
 
-DROP TABLE IF EXISTS `article`;
-CREATE TABLE IF NOT EXISTS `article` (
+DROP TABLE IF EXISTS `Article`;
+CREATE TABLE IF NOT EXISTS `Article` (
   `id` int(100) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) DEFAULT NULL,
   `picture` varchar(100) DEFAULT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `article` (
 -- Déchargement des données de la table `article`
 --
 
-INSERT INTO `article` (`id`, `title`, `picture`, `description`, `publicationDate`, `dogId`) VALUES
+INSERT INTO `Article` (`id`, `title`, `picture`, `description`, `publicationDate`, `dogId`) VALUES
 (1, 'ange', 'anjuide.jpeg', 'Ange a un chien qui s\'appel anjuide', '2019-01-08 05:21:24', 1),
 (2, 'Marine', 'mareine.jpeg', 'Marine a un chien qui s\'appel mareine', '2019-01-08 05:21:24', 2),
 (3, 'Youka', 'youyou.jpeg', 'Youka a un chien qui s\'appel youyou', '2019-01-08 05:21:24', 3),
@@ -67,8 +67,8 @@ INSERT INTO `article` (`id`, `title`, `picture`, `description`, `publicationDate
 -- Structure de la table `comment`
 --
 
-DROP TABLE IF EXISTS `comment`;
-CREATE TABLE IF NOT EXISTS `comment` (
+DROP TABLE IF EXISTS `Comment`;
+CREATE TABLE IF NOT EXISTS `Comment` (
   `id` int(100) NOT NULL AUTO_INCREMENT,
   `comment` text,
   `publicationDate` datetime DEFAULT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
 -- Déchargement des données de la table `comment`
 --
 
-INSERT INTO `comment` (`id`, `comment`, `publicationDate`, `articleId`, `userId`) VALUES
+INSERT INTO `Comment` (`id`, `comment`, `publicationDate`, `articleId`, `userId`) VALUES
 (1, 'joli', '2019-01-08 05:21:24', 1, 1),
 (2, 'beau', '2019-01-08 05:21:24', 2, 1),
 (3, 'pas mal', '2019-01-08 05:21:24', 3, 1),
@@ -126,8 +126,8 @@ INSERT INTO `comment` (`id`, `comment`, `publicationDate`, `articleId`, `userId`
 -- Structure de la table `dog`
 --
 
-DROP TABLE IF EXISTS `dog`;
-CREATE TABLE IF NOT EXISTS `dog` (
+DROP TABLE IF EXISTS `Dog`;
+CREATE TABLE IF NOT EXISTS `Dog` (
   `id` int(100) NOT NULL AUTO_INCREMENT,
   `nickname` varchar(50) DEFAULT NULL,
   `birthday` date DEFAULT NULL,
@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `dog` (
 -- Déchargement des données de la table `dog`
 --
 
-INSERT INTO `dog` (`id`, `nickname`, `birthday`, `picture`, `userId`) VALUES
+INSERT INTO `Dog` (`id`, `nickname`, `birthday`, `picture`, `userId`) VALUES
 (1, 'anjuide', '2019-01-08', 'anjuide.jpeg', 1),
 (2, 'mareine', '2019-01-08', 'mareine.jpeg', 2),
 (3, 'youyou', '2019-01-08', 'youyou.jpeg', 3),
@@ -161,11 +161,11 @@ INSERT INTO `dog` (`id`, `nickname`, `birthday`, `picture`, `userId`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `dograce`
+-- Structure de la table `dogRace`
 --
 
-DROP TABLE IF EXISTS `dograce`;
-CREATE TABLE IF NOT EXISTS `dograce` (
+DROP TABLE IF EXISTS `dogRace`;
+CREATE TABLE IF NOT EXISTS `dogRace` (
   `dogId` int(100) NOT NULL,
   `raceId` int(100) NOT NULL,
   PRIMARY KEY (`dogId`,`raceId`),
@@ -173,10 +173,10 @@ CREATE TABLE IF NOT EXISTS `dograce` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `dograce`
+-- Déchargement des données de la table `dogRace`
 --
 
-INSERT INTO `dograce` (`dogId`, `raceId`) VALUES
+INSERT INTO `dogRace` (`dogId`, `raceId`) VALUES
 (1, 1),
 (2, 2),
 (3, 3),
@@ -191,11 +191,11 @@ INSERT INTO `dograce` (`dogId`, `raceId`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `race`
+-- Structure de la table `Race`
 --
 
-DROP TABLE IF EXISTS `race`;
-CREATE TABLE IF NOT EXISTS `race` (
+DROP TABLE IF EXISTS `Race`;
+CREATE TABLE IF NOT EXISTS `Race` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `nameRace` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
@@ -205,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `race` (
 -- Déchargement des données de la table `race`
 --
 
-INSERT INTO `race` (`id`, `nameRace`) VALUES
+INSERT INTO `Race` (`id`, `nameRace`) VALUES
 (1, 'Rodweiller'),
 (2, 'Boodle'),
 (3, 'Bichpoo'),
@@ -217,11 +217,11 @@ INSERT INTO `race` (`id`, `nameRace`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `userdog`
+-- Structure de la table `UserDog`
 --
 
-DROP TABLE IF EXISTS `userdog`;
-CREATE TABLE IF NOT EXISTS `userdog` (
+DROP TABLE IF EXISTS `UserDog`;
+CREATE TABLE IF NOT EXISTS `UserDog` (
   `id` int(100) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) DEFAULT NULL,
   `pwd` varchar(255) DEFAULT NULL,
@@ -237,7 +237,7 @@ CREATE TABLE IF NOT EXISTS `userdog` (
 -- Déchargement des données de la table `userdog`
 --
 
-INSERT INTO `userdog` (`id`, `email`, `pwd`, `lastConnectionDate`, `lastName`, `firstName`, `country`, `city`) VALUES
+INSERT INTO `UserDog` (`id`, `email`, `pwd`, `lastConnectionDate`, `lastName`, `firstName`, `country`, `city`) VALUES
 (1, 'ange.gnamba@gmail.com', 'word', '2019-01-08 05:21:24', 'Ange', 'Gnamba', 'Suisse', 'Genève'),
 (2, 'marine.cerdelli@gmail.com', 'word', '2019-01-15 15:54:22', 'Marine', 'Cerdelli', 'Suisse', 'Genève'),
 (3, 'youka.oulai@gmail.com', 'word', '2019-01-12 12:12:12', 'Youka', 'Oulaï', 'Côte d\'Ivoire', 'Abidjan'),

@@ -298,12 +298,12 @@ class Connexion
             VALUE (:nickname, :birthday, :picture, :userId)"
         );
         // on exécute la requête
-        $requete_prepare->execute (
-            array ( 'nickname' => $nickname,
-                    'birthday' => $birthday,
-                    'picture' => $picture,
-                    'userId' => $userId
-            )
+        $requfetchAll(PDO::FETCH_CLASS, 'Dog');
+            afetchAll(PDO::FETCH_CLASS, 'Dog');
+             fetchAll(PDO::FETCH_CLASS, 'Dog');
+             fetchAll(PDO::FETCH_CLASS, 'Dog');
+             fetchAll(PDO::FETCH_CLASS, 'Dog');
+            )fetchAll(PDO::FETCH_CLASS, 'Dog');
         );
     }
     /* ------------------------------------------------------------------------------------------------------*/
@@ -325,12 +325,12 @@ class Connexion
                     'country' => $country,
                     'city' => $city
             )
-        );
-        return $this->connexion->lastInsertId();
-    }
-    /* ------------------------------------------------------------------------------------------------------*/
-    /* -------------------- FONCTION RECHERCHER UN CHIEN PAR NOM OU RACE ----------------------------------- */
-    /* ------------------------------------------------------------------------------------------------------*/
+        );fetchAll(PDO::FETCH_CLASS, 'Dog');
+        return $this->connexion->lastInsertId();fetchAll(PDO::FETCH_CLASS, 'Dog');
+    }fetchAll(PDO::FETCH_CLASS, 'Dog');
+    /* ----------------------------------------------------fetchAll(PDO::FETCH_CLASS, 'Dog');--------------------------------------------------*/
+    /* -------------------- FONCTION RECHERCHER UN CHIEN PAfetchAll(PDO::FETCH_CLASS, 'Dog');R NOM OU RACE ----------------------------------- */
+    /* ----------------------------------------------------fetchAll(PDO::FETCH_CLASS, 'Dog');--------------------------------------------------*/
     public function getDogsByKeywords($keywords)
     {
         // Je prépare la requête 
@@ -367,13 +367,48 @@ class Connexion
     public function getAllRaces() {
     
         $requete_prepare = $this->connexion -> prepare(
-            "SELECT nameRace FROM Race");
+            "SELECT * FROM Race");
 
         $requete_prepare -> execute();
         $race=$requete_prepare->fetchAll(PDO::FETCH_OBJ);
 
         return $race;
-    }   
+    } 
+        /* ------------------------------------------------------------------------------------------------------*/
+    /* -------------------- FONCTION RECHERCHER UNE RACE PAR ID  ----------------------------------- */
+    /* ------------------------------------------------------------------------------------------------------*/
+    // public function getDogsByRace($race)
+    // {
+    //     // Je prépare la requête 
+    //     $requete_prepare = $this->connexion->prepare(
+    //         "SELECT * 
+    //         FROM Dog
+    //         WHERE nameRace = :race"
+    //     );
+    //     // J'execute la requête en passant la valeur
+    //     $requete_prepare->execute(
+    //         array('race' => "%$race%")
+    //     );
+    //     // Je récupère le résultat de la requête sous forme d'objet en mappant avec la classe Dog
+    //     $listDogs = $requete_prepare->fetchAll(PDO::FETCH_CLASS, 'Dog');
+    //     // Je retourne un objet CommentfetchAll(PDO::FETCH_CLASS, 'Dog');
+    //     return $listDogs;fetchAll(PDO::FETCH_CLASS, 'Dog');
+    // }  fetchAll(PDO::FETCH_CLASS, 'Dog');
+  /* -----------------------------------------------------fetchAll(PDO::FETCH_CLASS, 'Dog');-------------------------------------------------*/
+    /* -------------------- FONCTION RECHERCHER UNE RACE PfetchAll(PDO::FETCH_CLASS, 'Dog');AR ID  ----------------------------------- */
+    /* ---------------------personneId--------------------fetchAll(PDO::FETCH_CLASS, 'Dog');-------------------------------------------------------------*/
+    public function getDogsByRace ($raceId) {
+         
+        $requete_prepare = $this->connexion->prepare(
+            "SELECT D.nickname FROM Dog D
+        INNER JOIN DogRace DR ON DR.dogId = D.id
+        WHERE DR.raceId = :raceId");
+         
+         $requete_prepare -> execute(
+            array("raceId" => $raceId));
+         $listDogs = $requete_prepare->fetchAll(PDO::FETCH_OBJ);
+         return $listDogs;
+     }    
 }
     
 

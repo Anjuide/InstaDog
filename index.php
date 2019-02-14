@@ -17,6 +17,14 @@ if (isset($_GET["keywords"])){
 }
 // APPEL DE LA FONCTION DE RECHERCHE DE L'OBJET CONNEXION
 $listDogs = $appli->getDogsByKeywords($keywords);
+if (isset($_GET["race"])){
+    $race = $_GET["race"];
+    $listDogs = $appli->getDogsByRace($race);
+}
+var_dump($listDogs);
+
+
+ 
 ?>
 <!-- CONTAINER DU BODY -->
 <div class="container bg-white text-dark">

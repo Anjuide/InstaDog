@@ -36,9 +36,17 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="races.php">Races</a>
-      </li>
+      <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Races</a>
+    <?php $listRaces = $appli->getAllRaces() ;  ?>
+    <div class="dropdown-menu">
+      <?php foreach($listRaces as $race){
+        echo"<a class='dropdown-item' href='index.php?race=$race->id'>$race->nameRace</a>";  
+      }
+      ?>
+ 
+    </div>
+  </li>
       <li class="nav-item">
         <a class="nav-link" href="articles.php">Articles</a>
       </li>
