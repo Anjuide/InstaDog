@@ -55,21 +55,25 @@ $nbreCommentaires = count($listeCommentaires);
 
 				<!-- LISTE DES COMMENTAIRES -->
 				<ul class="commentlist">
-					
+					<?php if (isset($_SESSION['email']) && isset($_SESSION['pwd'])){?>
 					<!-- COMMENTER L'ARTCLE -->
 					<li class="comment" id="comment_188868" data-id="188868">
+						
 						<div class="comment-author">
 							<strong>Commenter l'article</strong>
 						</div>
-						<form action="" method="post">
-							<?php include "action/article-du-chien-form.php";?>
-							<input type="hidden" name="id" value="<?php echo $_SESSION['id'] ?>">
-							<p><textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="3"></textarea></p>
-							<input type="hidden" name="idArticle" value="<?php echo $articleId ?>">
-							<button class="btn btn-lg btn-primary btn-block text-uppercase" name="ajouterCommentaire" type="submit">Valider</button>
-						</form>
 						
+							<form action="" method="post">
+								<?php include "action/article-du-chien-form.php";?>
+								<input type="hidden" name="id" value="<?php echo $_SESSION['id'] ?>">
+								<p><textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="3"></textarea></p>
+								<input type="hidden" name="idArticle" value="<?php echo $articleId ?>">
+								<button class="btn btn-lg btn-primary btn-block text-uppercase" name="ajouterCommentaire" type="submit">Valider</button>
+							</form>
 					</li><!-- FIN comment -->
+						<?php }
+						?>
+					
 					
 					<!-- COMMENTAIRES DE L'ARTICLE -->
 					<?php foreach ($listeCommentaires as $commentaire){ ?>
