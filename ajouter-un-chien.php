@@ -17,7 +17,7 @@ include "header.php";
                 <div class="card-body">
                     <h5 class="card-title text-center">Ajouter Un Chien</h5>
                     <form class="form-signin" action="" method="POST" enctype="multipart/form-data" >
-                        <?php include "ajouter-un-chien-form.php";?>    
+                        <?php include "action/ajouter-un-chien-form.php";?>    
                         <div class="form-label-group">
                             <label for="inputPrenom">Nom du chien</label>
                             <input type="text" id="inputPrenom" name ="nickname" class="form-control" placeholder="Nom du chien" required autofocus> 

@@ -62,7 +62,7 @@ $nbreCommentaires = count($listeCommentaires);
 							<strong>Commenter l'article</strong>
 						</div>
 						<form action="" method="post">
-							<?php include "article-du-chien-form.php";?>
+							<?php include "action/article-du-chien-form.php";?>
 							<input type="hidden" name="id" value="<?php echo $_SESSION['id'] ?>">
 							<p><textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="3"></textarea></p>
 							<input type="hidden" name="idArticle" value="<?php echo $articleId ?>">

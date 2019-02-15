@@ -19,7 +19,7 @@ include "header.php";
           <h5 class="card-title text-center">Connexion</h5>
           <hr class="my-4">
           <form class="form-signin" action="" method="post" enctype="multipart/form-data" >
-            <?php include "connexion-form.php";?>
+            <?php include "action/connexion-form.php";?>
             <div class="form-label-group">
               <label for="inputEmail">Adresse e-mail</label>
               <input type="email" id="inputEmail"  name="email" class="form-control" placeholder="Adresse e-mail" required autofocus> 
@@ -44,64 +44,7 @@ include "header.php";
     </div>
   </div>
 </div>
-
-<?php
-//   $email    = "";
-//   $errors = array(); 
-  
-//   if (isset($_POST['connexion'])) {
-
-//   // receive all input values from the form
-
-//     $email    =  ($_POST['email']);
-//     $password =  ($_POST['password']);
-
-//     // form validation: ensure that the form is correctly filled ...
-//     // by adding (array_push()) corresponding error unto $errors array
-
-//   if (empty($email)) { array_push($errors, "Email is required"); }
-
-//   if (empty($password)) { array_push($errors, "Password is required"); }
-
-//   // first check the database to make sure 
-//   // a user is already exist with the same  email
-
-//   $user = $appli->checkUserIsExist($email);
-
-//   if ($user) { // if user exists
-     
-//     $pwd = $user->getPwd();
-//     $id  = $user->getId();
-    
-//     if (password_verify($password, $pwd)) { //Verify the Entered password With saving in the database
-
-//       $appli->insertLastConnectionDateToUser($id);
-
-//       $_SESSION['username'] = $email;
-//       $_SESSION['userId'] = $id;
-//       $_SESSION['success'] = "You are now logged in";
-
-//       echo 'You are now logged in';
-
-//       echo $id;
-
-//       echo "<script> window.location.href =\"profileAvecLeChien.php\"</script>";
-
-
-//     } else {
-
-//       echo 'Mouvais un mot pass ou un email  ';
-
-//     }  
- 
-     
-//   }
-    
-
-// }
-?>
-
-
+<!-- echo '<body onLoad="alert(\'Bon mot de passe...\')">'; -->
 <?php 
 
 include "footer.php"

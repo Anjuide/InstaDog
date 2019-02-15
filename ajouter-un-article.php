@@ -18,7 +18,7 @@ include "header.php";
 <!-- !!!!! AJOUTER UNE PHOTO DU CHIEN EN BANNIERE !!!!!! -->
                     <h5 class="card-title text-center">Ajouter Un Article</h5>
                     <form class="form-group" action="" method="POST" enctype="multipart/form-data" >
-                        <?php include "ajouter-un-article-form.php";?>
+                        <?php include "action/ajouter-un-article-form.php";?>
                         <!-- TITRE DE L'ARTICLE -->
                         <div class="input-group input-group-lg inp-articl">
                             <div class="input-group-prepend">

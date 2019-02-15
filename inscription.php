@@ -19,7 +19,7 @@ include "header.php";
           <h5 class="card-title text-center">Inscrivez-vous</h5>
           <hr class="my-4">
           <form class="form-signin needs-validation" action="" method="post" enctype="multipart/form-data" novalidate >
-            <?php include "inscription-form.php";?>
+            <?php include "action/inscription-form.php";?>
             <div class="form-label-group">
               <label for="inputEmail">Adresse e-mail</label>
               <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Adresse e-mail" required autofocus> 
