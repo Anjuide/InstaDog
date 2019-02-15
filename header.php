@@ -50,9 +50,6 @@
       <li class="nav-item">
         <a class="nav-link" href="articles.php">Articles</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ajouter-un-chien.php">Ajouter un chien</a>
-      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" action="index.php" method="get" enctype="multipart/form-data">
       <input class="form-control mr-sm-2" type="search" name ="keywords" placeholder="Rechercher par race, nom ou ville" aria-label="Search">
@@ -61,6 +58,9 @@
     </form>
     <ul class="navbar-nav ml-auto">
         <?php if (isset($_SESSION['email']) && isset($_SESSION['pwd'])){
+          echo '<li class="nav-item mr-1">';
+            echo '<a class="nav-link btn bg-primary" href="ajouter-un-chien.php">Ajouter un chien</a>';
+          echo '</li>';
           echo '<li class="nav-item dropdown">';
             echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon compte</a>';
             echo '<div class="dropdown-menu menu-deroulant" aria-labelledby="navbarDropdown">';
