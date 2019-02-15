@@ -21,10 +21,6 @@ if (isset($_GET["race"])){
     $race = $_GET["race"];
     $listDogs = $appli->getDogsByRace($race);
 }
-var_dump($listDogs);
-
-
- 
 ?>
 <!-- CONTAINER DU BODY -->
 <div class="container bg-white text-dark">
