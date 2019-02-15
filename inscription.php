@@ -54,7 +54,7 @@ include "header.php";
 
             <div class="form-label-group">
               <label for="inputPasswordConfirm">Confirmez le mot de passe</label>
-              <input type="password" id="inputPasswordConfirm" name="password-repeat" minlength=5 class="form-control" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[~`!@#$%^&*()\-_+={};:\[\]\?\.\\/,]).{6,}" title="Veuillez saisir le même mot de passe" placeholder="Confirmez le mot de passe" required onkeyup="checkPassword()">
+              <input type="password" id="inputPasswordConfirm" name="password-repeat" minlength=6 class="form-control" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[~`!@#$%^&*()\-_+={};:\[\]\?\.\\/,]).{6,}" title="Veuillez saisir le même mot de passe" placeholder="Confirmez le mot de passe" required onkeyup="checkPassword()">
             </div>
             <hr class="my-4">
             
