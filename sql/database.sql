@@ -72,7 +72,7 @@ CREATE TABLE Race (
 CREATE TABLE DogRace (
     dogId INT(100),
     raceId INT(100),
-    PRIMARY KEY (dogId, raceId ),
+    PRIMARY KEY (dogId, raceId),
     FOREIGN KEY (dogId) REFERENCES Dog(id),
     FOREIGN KEY (raceId) REFERENCES Race(id)    
 );
