@@ -397,18 +397,35 @@ class Connexion
   /* -----------------------------------------------------fetchAll(PDO::FETCH_CLASS, 'Dog');-------------------------------------------------*/
     /* -------------------- FONCTION RECHERCHER UNE RACE PfetchAll(PDO::FETCH_CLASS, 'Dog');AR ID  ----------------------------------- */
     /* ---------------------personneId--------------------fetchAll(PDO::FETCH_CLASS, 'Dog');-------------------------------------------------------------*/
-    public function getDogsByRace ($raceId) {
-         
+    public function getDogsByRace ($raceId) {        
         $requete_prepare = $this->connexion->prepare(
-            "SELECT D.nickname FROM Dog D
+            "SELECT D.id, D.nickname, D.birthday, D.picture, D.userId FROM Dog D
         INNER JOIN DogRace DR ON DR.dogId = D.id
-        WHERE DR.raceId = :raceId");
-         
+        WHERE DR.raceId = :raceId");     
          $requete_prepare -> execute(
             array("raceId" => $raceId));
-         $listDogs = $requete_prepare->fetchAll(PDO::FETCH_OBJ);
+         $listDogs = $requete_prepare->fetchAll(PDO::FETCH_CLASS, 'Dog');
          return $listDogs;
-     }    
+    }
+    /* ------------------------------------------------------------------------------------------------------*/
+/* ///////////////////////////////          UpdateUserProfile           /////////////////////////////////*/
+/* ------------------------------------------------------------------------------------------------------*/ 
+
+    public function UpdateUserProfile($id, $lastName, $firstName, $country, $city) {  // Pour page profil-form.php     
+        $requete_prepare = $this->connexion -> prepare(
+            "UPDATE UserDog 
+            SET lastName = :lastName, 
+                firstName = :firstName, 
+                country = :country, 
+                city = :city 
+            WHERE id = :id");
+     
+        $requete_prepare -> execute(array('id' => $id,
+                                          'lastName'  => $lastName,
+                                          'firstName' => $firstName,
+                                          'country' => $country,
+                                          'city' => $city));
+    }   
 }
     
 
