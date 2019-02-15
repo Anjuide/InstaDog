@@ -31,7 +31,7 @@ $city        = $userProfile->getCity();
 
     <div class="row">         
         <div class="col col-md-6 mx-auto mt-4">   
-            <button class="btn btn-lg btn-primary btn-block text-uppercase" name="AjoutUnchien" type="submit"><a href="ajouter-un-chien.php" class="text-white">Ajouter un chien</a></button>
+        <a href="ajouter-un-chien.php" class="btn btn-lg btn-primary btn-block text-uppercase">Ajouter un chien</a>
         </div> 
     </div>
 
