@@ -7,7 +7,7 @@ if (isset($_POST['ajouterDog'])) {
         // RECUPERER LES POSTS
         $nickname = $_POST['nickname'];
         $birthday = $_POST['birthday'];
-        $race1 = $_POST['race1'];
+        $raceId = $_POST['race1'];
         // $race2 = $_POST['race2'];
         $userId = $_SESSION['id'];
         $picture = upload($_FILES['picture']);
@@ -15,7 +15,8 @@ if (isset($_POST['ajouterDog'])) {
         // FAIRE UNE FONCTION QUI VERIFIE SI LE FICHIER A BIEN ETE AJOUTER AVANT D'AJOUTER LE CHIEN
         // LA FONCTION DOIT POUVOIR AUSSI RETOURNER LES ERREURS
         // APPEL DE MA FONCTION QUI AJOUTE UN CHIEN
-       $appli->setDog($nickname, $birthday, $picture, $userId);
+       $dogId = $appli->setDog($nickname, $birthday, $picture, $userId);
+       $appli->setDogRace($dogId, $raceId);
        echo "<script type='text/javascript'>document.location.replace('index.php');</script>";
     } else {
         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
