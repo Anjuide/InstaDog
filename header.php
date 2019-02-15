@@ -64,7 +64,7 @@
           echo '<li class="nav-item dropdown">';
             echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon compte</a>';
             echo '<div class="dropdown-menu menu-deroulant" aria-labelledby="navbarDropdown">';
-            echo '<a class="dropdown-item" href="#">Ton profil</a>
+            echo '<a class="dropdown-item" href="profil.php">Ton profil</a>
             <a class="dropdown-item" href="#">Tes chiens</a>
             <a class="dropdown-item" href="#">Tes articles</a>
             <div class="dropdown-divider"></div>';
