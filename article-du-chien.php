@@ -76,11 +76,13 @@ $nbreCommentaires = count($listeCommentaires);
 					
 					
 					<!-- COMMENTAIRES DE L'ARTICLE -->
-					<?php foreach ($listeCommentaires as $commentaire){ ?>
+					<?php foreach ($listeCommentaires as $commentaire){ 
+						$user = $appli->getUserProfile($commentaire->getId())
+						?>
 					<li class="comment" id="comment_189914" data-id="189914">
 						<!-- AUTEUR DU COMMENTAIRE -->
 						<div class="comment-author">
-							<strong><a href="#"><?php echo "John Doe"; ?></a></strong>
+							<strong><a href="#"><?php echo $user->getLastName() ; ?></a></strong>
 						</div>
 						<!-- COMMENTAIRE DE L'AUTEUR -->
 						<p><?php echo $commentaire->getComment(); ?></p>
