@@ -305,6 +305,7 @@ class Connexion
                     'userId' => $userId
             )
         );
+        return $this->connexion->lastInsertId();
     }
     /* ------------------------------------------------------------------------------------------------------*/
     /* ----------------------------------- FONCTION D'INSERTION USER --------------------------------------- */
@@ -426,6 +427,22 @@ class Connexion
                                           'country' => $country,
                                           'city' => $city));
     }   
+    /* ------------------------------------------------------------------------------------------------------*/
+    /* ------------------------------------ FONCTION D'INSERTION RACEDOG --------------------------------------- */
+    /* ------------------------------------------------------------------------------------------------------*/
+    public function setDogRace ($dogId, $raceId){
+        // on prépare notre requête 
+        $requete_prepare = $this->connexion->prepare(
+            "INSERT INTO DogRace (dogId, raceId) 
+            VALUE (:dogId, :raceId)"
+        );
+        // on exécute la requête
+        $requete_prepare->execute (
+            array ( 'dogId' => $dogId,
+                    'raceId' => $raceId
+            )
+        );
+    }
 }
     
 
