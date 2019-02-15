@@ -38,9 +38,9 @@ include "header.php";
                     <select class="custom-select" name ="race1" id="inputGroupSelect01">
                         <option selected>Choisir...</option>
                         <?php $races = $appli->getAllRaces();
-                          foreach  ($races  as  $race) {
+                          foreach  ($races as $race) {
                           $dogRace = $race->nameRace;
-                          echo "<option value = '$dogRace' >$dogRace</option>";  
+                          echo "<option value = '$race->id'>$dogRace</option>";  
                           }  ?>
                     </select>
                     </div>
