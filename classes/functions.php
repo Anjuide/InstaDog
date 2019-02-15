@@ -37,7 +37,7 @@ function upload($picture){
         $today = date('Ymd_His-');
         $fileName = $today.$picture['name'];
         // DEPLACER LE FICHIER TELECHARGÉ DANS LE SERVEUR
-        move_uploaded_file($picture['tmp_name'], 'images/upload/'.$fileName);
+        move_uploaded_file($picture['tmp_name'], 'images/dog/'.$fileName);
         echo "Bravo! L'image a été téléchargé!";
         return $fileName;
     }
