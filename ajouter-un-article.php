@@ -3,6 +3,10 @@
 require("classes/Connexion.php");
 // ON DEMARRE LA SESSION AVANT D'ECRIRE DU CODE HTML
 session_start();
+// SECURISER LA PAGE
+if (!isset($_SESSION['email']) && !isset($_SESSION['pwd']) OR !isset($_GET['id'])){
+    echo "<script type='text/javascript'>document.location.replace('index.php');</script>";
+}
 // DEMARRER UN NOUVEL OBJET DE CONNEXION
 $appli = new Connexion();
 // TITRE DE LA PAGE

@@ -23,7 +23,7 @@ if (isset($_GET["race"])){
 }
 ?>
 <!-- CONTAINER DU BODY -->
-<div class="container bg-white text-dark">
+<div class="container-fluid bg-white text-dark">
     <div class="row">
         <div class="col">
             <h1 class="display-2 text-center">InstaDog</h1>

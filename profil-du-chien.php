@@ -5,6 +5,10 @@ require("classes/Connexion.php");
 session_start();
 // DEMARRER UN NOUVEL OBJET DE CONNEXION
 $appli = new Connexion();
+// SECURISER LA PAGE
+if (!isset($_GET['id'])){
+    echo "<script type='text/javascript'>document.location.replace('index.php');</script>";
+}
 // TITRE DE LA PAGE
 $title = "Profil du chien";
 // INCLURE LE HEADER
