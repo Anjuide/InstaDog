@@ -1,7 +1,7 @@
 INSERT INTO Race (nameRace) VALUES 
     ('Labrador'), ('Chihuahua'), ('Berger Allemand'), ('Pit Bull'), ('Teckel'), ('Boxer'), ('Basenji'), ('Bichpoo'), ('Super Rare'), ('Doxle');
 
-INSERT INTO userDog (email, pwd, lastConnectionDate, lastName, firstName, country, city) VALUES 
+INSERT INTO UserDog (email, pwd, lastConnectionDate, lastName, firstName, country, city) VALUES 
     ('sabine@realise.ch', '$2y$10$RZvlSXN4j9ufEUA9/mh45Od7dQ0nOPZM3SI2fewLc6vHBlpYEZdKa', '2019-01-01 12:12:12', 'Sabine', 'Palazzotto', 'Suisse', 'Genève'),
     ('ange@realise.ch', '$2y$10$RZvlSXN4j9ufEUA9/mh45Od7dQ0nOPZM3SI2fewLc6vHBlpYEZdKa', '2019-01-01 12:12:12', 'Ange', 'Gnamba', 'Suisse', 'Genève'),
     ('cyril@realise.ch', '$2y$10$RZvlSXN4j9ufEUA9/mh45Od7dQ0nOPZM3SI2fewLc6vHBlpYEZdKa', '2019-01-01 12:12:12', 'Cyril', 'Tekpo', 'Suisse', 'Genève'),
