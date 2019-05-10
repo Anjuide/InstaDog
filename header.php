@@ -24,7 +24,7 @@
     </title>
 </head>
 <body>
-<header class="container-fluid">
+<header class="container-fluid px-0">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="index.php">InstaDog</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

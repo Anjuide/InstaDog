@@ -27,7 +27,7 @@ if (isset($_GET["race"])){
     <div class="row">
         <div class="col">
             <h1 class="display-2 text-center">InstaDog</h1>
-            <h2 class="text-center">Découvrez la magie des moments de chien de tous les jours.</h2>
+            <h2 class="text-center text-muted">Découvrez la magie des moments de chien de tous les jours.</h2>
         </div>
     </div>
 
