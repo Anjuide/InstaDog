@@ -2,6 +2,35 @@
 body {
   background: #fff;
 }
+/* PAGE D'ACCUEIL */
+@import url('https://fonts.googleapis.com/css?family=Marck+Script');
+.container-titre h1{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 4em;
+  font-weight: 300;
+  letter-spacing: -0.05em;
+}
+.container-titre h2{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5em;
+  font-weight: 100;
+  letter-spacing: -0.05em;
+}
+.container-image{
+  border: 0px;
+  margin:auto; 
+  padding:0;
+}
+.container-image a{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: capitalize;
+  color: brown;
+}
+.container-image h4{
+  font-family: 'Marck Script', cursive;
+  font-size: 3rem;
+  font-weight: bold;
+}
 /* PAGE CONNEXION */
 :root {
   --input-padding-x: 1.5rem;
