@@ -35,7 +35,7 @@ if (isset($_GET["race"])){
         <?php 
         foreach ($listDogs as $dog) {
             // IMAGE DU CHIEN ET SON NICKNAME
-            echo '<div class="card col-lg-3 col-md-4" style="width: 17rem; margin:auto; padding:0;">';
+            echo '<div class="card col-lg-3 col-md-4" style="margin:auto; padding:0;">';
                 echo "<a href='profil-du-chien.php?id=" . $dog->getId() . "'>";
                     echo '<img class="card-img-top" src="images/dog/'.$dog->getPicture().'" alt="Photo de profil de ' . $dog->getNickname() . '">';
                     echo '<div class="card-img-overlay">';
